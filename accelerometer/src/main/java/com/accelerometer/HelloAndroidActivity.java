@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -29,6 +30,8 @@ public class HelloAndroidActivity extends Activity implements SensorEventListene
     @ViewById
     TextView accelZ;
 
+    @ViewById
+    EditText editText;
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
@@ -44,13 +47,14 @@ public class HelloAndroidActivity extends Activity implements SensorEventListene
     private void initAccelerometer() {
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mSensorManager.registerListener(this, mAccelerometer, 2000000);
-
+        mSensorManager.registerListener(this, mAccelerometer, 1000 * 2000);
     }
 
 
     @Click
     public void buttonPlay() {
+        mSensorManager.unregisterListener(this, mAccelerometer);
+        mSensorManager.registerListener(this, mAccelerometer, 1000 * Integer.valueOf(editText.getText().toString()));
         updateAccelValues();
 
     }
