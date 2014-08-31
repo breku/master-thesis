@@ -77,7 +77,7 @@ public class HelloAndroidActivity extends Activity implements SensorEventListene
         for (int i = 0; i < 3; i++) {
             accelValues[i] = sensorEvent.values[i];
         }
-        updateAccelValues();
+       updateAccelValues();
     }
 
     @Override
