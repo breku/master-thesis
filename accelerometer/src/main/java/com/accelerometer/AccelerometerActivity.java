@@ -18,7 +18,7 @@ import com.googlecode.androidannotations.annotations.ViewById;
 
 @NoTitle
 @EActivity(R.layout.activity_main)
-public class HelloAndroidActivity extends Activity implements SensorEventListener {
+public class AccelerometerActivity extends Activity implements SensorEventListener {
 
 
     @ViewById
