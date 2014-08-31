@@ -51,6 +51,11 @@
                     <artifactId>android-maven-plugin</artifactId>
                     <version>${android.plugin.version}</version>
                     <extensions>true</extensions>
+                    <configuration>
+                        <sdk>
+                            <platform>19</platform>
+                        </sdk>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
