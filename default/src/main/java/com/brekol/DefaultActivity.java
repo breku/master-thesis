@@ -1,4 +1,4 @@
-package com.accelerometer;
+package com.brekol;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ public class DefaultActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.accelerometer.R.menu.main, menu);
+        getMenuInflater().inflate(com.brekol.R.menu.main, menu);
         return true;
     }
 

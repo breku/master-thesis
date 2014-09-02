@@ -8,8 +8,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>accelerometer</module>
         <module>default</module>
+        <module>sort</module>
+        <module>accelerometer</module>
     </modules>
 
 

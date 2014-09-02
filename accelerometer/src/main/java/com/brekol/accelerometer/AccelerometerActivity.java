@@ -1,4 +1,4 @@
-package com.accelerometer;
+package com.brekol.accelerometer;
 
 import android.app.Activity;
 import android.content.Context;
@@ -68,7 +68,7 @@ public class AccelerometerActivity extends Activity implements SensorEventListen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.accelerometer.R.menu.main, menu);
+        getMenuInflater().inflate(com.brekol.accelerometer.R.menu.main, menu);
         return true;
     }
 
