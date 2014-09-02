@@ -1,0 +1,77 @@
+\chapter{Zastosowane podejście}
+\label{c4}
+
+W danym rozdziale zawarto opis zastosowanego podejścia, do porównania programowania wizualnego i programowania natywnego.
+
+\section{Wstęp}
+\label{c41}
+
+Zastosowane podejście polegało na stworzeniu jak największej ilości aplikacji, wykorzystujących różne komponenty. Następnie stworzenie takich samych aplikacji w języku Java. Mając dużą liczbę aplikacji pokrywającą prawie wszystkie możliwości App Inventora, będziemy mogli odpowiedzieć na wiele pytań jego dotyczących, które zostały postawione we wstępie pracy.(\ref{c12})
+
+\section{Dalvik Debug Monitor}
+
+Dalvik Debug Monitor (DDMS) jest to narzędzie pomocne w debugowaniu aplikacji. Dostarcza on takich funkcji jak przekierowanie portów, przechwyt obrazu na urządzeniu, informacje o wątkach, stosie, a także o metodach, które są uruchomione jeżeli włączymy ich profilowanie.
+
+W systemie Android każda aplikacja jest uruchamiana w osobnym procesie, a każdy z procesów działa na swojej własnej wirtualnej maszynie. Każda z tych wirtualnych maszyn wystawia unikalny port, do którego może się podłączyć debbuger. Dalvik Debug Monitor zaraz po starcie podłącza się do Android Debug Bridge (ADB) - narzędzia, które pozwala na komunikację z podłączonym urządzeniem.
+
+Po podłączeniu urządzenia tworzony jest serwis monitorujący pomiędzy ADB a DDMS, który powiadamia DDMS, kiedy wirtualna maszyna na urządzeniu jest uruchomiona lub zakończona. Gdy wirtualna maszyna wystartuje DDMS odbiera ID (pid) procesu uruchomionego na tej maszynie korzystając z ADB. Następnie tworzone jest połączenie do debbugera maszyny wirtualnej. Po tych operacjach DDMS jest w stanie komuniokować się z maszyną wirtualną, korzystając z dostosowanego protokołu.\cite{doc:ddms}
+
+Poniżej widać narzędzie Dalvik Debug Monitor. Na telefonie uruchomione są 2 procesy jednocześnie. Po prawej stronie widać wykres obciążenia procesora, poszczególnych procesów.
+
+\begin{figure}[th] 
+\centering\includegraphics[width=10cm]{figures/dalvik}
+\caption{Przykładowy zrzut ekranu DDMS}
+\end{figure}
+
+\section{Zużycie procesora i pamięci}
+
+Każda aplikacja powoduje zużycie procesora oraz zajmuje miejsce w pamięci. Do pomiaru tych wielkości został użyty Dalvik Debug Monitor.
+
+
+Aplikację napisaną w Javie możemy konfigurować dowolnie. Między innymi możemy umożliwić aby była debugowalna, ustawiając parameter:
+
+\begin{lstlisting}
+android:debbugable="true"
+\end{lstlisting}
+
+Jest to ważne, ponieważ aplikacja (plik *.apk) wyeksportowana z App Inventora jest niemożliwa do debugowania. Powyższy parametr ma fałszywą wartość logiczną. Aby to zmienić trzeba aplikację zdekompilować, aby zobaczyć źródła aplikacji i zmienić opcję debugowania. Dekompilacja odbywa się za pomocą darmowego narzędzia apktool.
+
+\begin{lstlisting}
+apktool -d aplikacja.apk
+\end{lstlisting}
+
+Po wykonaniu powyższej komendy zostaje tworzony folder z taką samą nazwą jak nazwa aplikacji. Plik AndroidManifest.xml jest już czytelny i możemy zmienić w nim parametr odpowiadający za debugowanie. Po zmianie, aplikację trzeba skompilować ponownie. Trzeba uruchomić poniższą komendę:
+
+\begin{lstlisting}
+apktool -b aplikacja
+\end{lstlisting}
+
+Aplikacja została skompilowana ponownie do pliku *.apk. Aby zainstalować ją na urządzeniu trzeba ją jeszcze cyfrowo podpisać. Generujemy klucz dla aplikacji:
+
+\begin{lstlisting}
+keytool -genkey -v -keystore keystore -alias alias_aplikacji -keyalg RSA 
+-keysize 2048 -validity 20000
+\end{lstlisting}
+
+Następnie podpisujemy aplikację:
+
+\begin{lstlisting}
+jarsigner -verbose -keystore keystore aplikacja.apk alias_aplikacji
+\end{lstlisting}
+
+Ostatecznym krokiem jest zainstalowanie aplikacji na telefonie:
+
+\begin{lstlisting}
+adb install aplikacja.apk
+\end{lstlisting}
+
+Dzięki tym wszystkim czynnościom maszyna wirtualna uruchamiająca aplikacja uruchomiona na telefonie udostępnia na port umożliwiający debugowanie. Do tego portu podłącza się Dalvik Debug Monitor, z którego możemy odczytać różne statystyki aplikacji i porównać je ze statystykami aplikacji napisanej natywnie w języku Java.
+
+\section{Możliwości App Inventora}
+
+App Inventor posiada bardzo dużą liczbę komponentów, którą możemy użyć. Są jednak pewne braki. Nowe telefony posiadają coraz więcej sensorów oraz innych funkcji, które nie są możliwe do obsłużenia przez powyższe narzędzie.
+
+\section{Łatwość tworzenia aplikacji}
+
+Ilość dokumentacji oraz poblemów, z którymi spotkali się użytkownicy może być różna. Stworzenie bardziej zaawansowanej aplikacji może być wyzwaniem dla App Inventora.
+

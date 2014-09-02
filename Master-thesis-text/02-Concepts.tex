@@ -1,0 +1,55 @@
+\chapter{Podstawowe pojęcia}
+\label{c2}
+
+W danym rozdziale zostaną zawarte podstawowe pojęcia i mechanizmy używane przez aplikację App Inventor. Ideą tutaj jest przypomnienie oraz przypliżenie ważnych terminów informatycznych.
+
+\section{App Inventor}
+\label{c21}
+
+W grudniu 2013 roku został wydany App Inventor w wersji drugiej. Starsza wersja została nazwana jako Classic. Oba narzędzia są bardzo podobne jednak projekty stworzone w starszej wersji nie mogą zostać zaimportowane do nowszej. W danej pracy magisterskiej skupienie zostało na nowej wersji App Inventora.
+
+\section{Główne komponenty}
+\label{c22}
+
+App Inventor celowo ułatwia programowanie poprzez wizualizację tworzonych komponentów i intuicyjny interfejs. App Inventor składa się z 3 głównych komponentów jakimi są:
+\begin{itemize}
+\item App Inventor Designer
+\item App Inventor Blocks Editor
+\item Android Device Emulator
+\end{itemize}
+
+\subsection{App Inventor Designer}
+\label{c221}
+
+Jednym z głównych widoków jakie można używać jest widok Designera. Projektowanie interfejsu użytkownika polega na przeciąganiu komponentów z dostępnej palety, wliczając w to także niewidoczne komponenty takie jak sensory. W tym widoku można również zmieniać właściwości obiektów, które stworzyliśmy. Między istnieje możliwość zmiany położenia, wielkości, układu (pionowy, poziomy) itd.
+
+Designer jest zaprojektowany jako zwykła aplikacja internetowa. Tak więc uruchamia się go, tak jak zwykłą stronę internetową wpisując jej adres www.
+
+\begin{figure}[th] 
+\centering\includegraphics[width=10cm]{figures/designer}
+\caption{App Inventor Designer}
+\end{figure}
+
+\subsection{App Inventor Blocks Editor}
+\label{c222}
+
+Drugim widokiem jest Blocks Editor. Zachowanie aplikacji zostaje tutaj zaprogramowane poprzez połączenie odpowiednich bloków. Możemy korzystać z bardziej generalnych komponentów, a także z bardziej specyficznych. Dla każdego komponentu, który został stworzony w interfejsie graficznym (Designerze) są dostępne bloki mówiące, co tak naprawdę możemy zrobić. Wygląda to tak, że przeciągamy komponenty z dostępnej palety medotą "przeciągnij i upuść", a następnie łączymy je tak jak puzzle.
+
+Ta część aplikacji normalnie reprezentowana jest przez kod napisany przez programistę. Więc napisanie zachowania aplikacji odbywa się poprzez łączenie puzzli, bez znajomości języka Java.
+
+\begin{figure}[th] 
+\centering\includegraphics[width=10cm]{figures/editor}
+\caption{App Inventor Blocks Editor}
+\end{figure}
+
+\subsection{Android Device Emulator}
+\label{c223}
+
+Android Device Emulator jest to emulator telefonu lub tabletu. Jest to wirtualna wersja smartphonu, w której znajdują się obsługa dotyku ekranu, przyciski systemowe oraz typowe funkcje.
+
+Zmiany, które zostają wprowadzone, natychmiast reflektują na działanie aplikacji. Nie ma potrzeby jakiejkolwiek kompilacji i uruchamiania aplikacji od nowa. Jeżeli aplikacja zostanie uruchomiana, kompilacja zmienionych fragmentów oraz zainstalowanie ich na emulatorze dzieje się w czasie rzeczywistym. Jest to bardzo wygodna opcja budowania aplikacji i testowania jej. Zmiany, które zrobimy są od razu widoczne na ekranie.
+
+\begin{figure}[th] 
+\centering\includegraphics[width=10cm]{figures/emulator}
+\caption{Android Device Emulator}
+\end{figure}
