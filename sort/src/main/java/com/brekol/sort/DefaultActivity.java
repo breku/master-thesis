@@ -58,29 +58,28 @@ public class DefaultActivity extends Activity {
         long startTime = System.nanoTime();
         sort(list);
         long endTime = System.nanoTime();
-        sortedListLabel.setText(list.toString());
-        double timeSec = ((endTime - startTime) / Math.pow(10, 9));
+//        sortedListLabel.setText(list.toString());
+        double timeSec = ((endTime - startTime) / Math.pow(10, 6));
         DecimalFormat df = new DecimalFormat("#.######");
         timeLabel.setText(df.format(timeSec));
 
     }
 
 
-    private void sort(List<Integer> list){
+    public void sort(List<Integer> list){
 
-        int index = 0;
-
-        for(int i =0;i<list.size();i++){
-            int min = list.get(i);
-            for(int j=i;j<list.size();j++){
-                if(list.get(j) < min ){
-                    min = list.get(j);
+        for(int i =0;i<list.size()-1;i++){
+            int index = i;
+            for(int j=i+1;j<list.size();j++){
+                if(list.get(j) < list.get(index) ){
                     index = j;
                 }
             }
-            int tmp = list.get(i);
-            list.set(i,min);
-            list.set(index,tmp);
+            if(index != i){
+                int tmp = list.get(i);
+                list.set(i,list.get(index));
+                list.set(index,tmp);
+            }
         }
 
     }

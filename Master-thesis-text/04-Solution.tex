@@ -16,7 +16,7 @@ W systemie Android każda aplikacja jest uruchamiana w osobnym procesie, a każd
 
 Po podłączeniu urządzenia tworzony jest serwis monitorujący pomiędzy ADB a DDMS, który powiadamia DDMS, kiedy wirtualna maszyna na urządzeniu jest uruchomiona lub zakończona. Gdy wirtualna maszyna wystartuje DDMS odbiera ID (pid) procesu uruchomionego na tej maszynie korzystając z ADB. Następnie tworzone jest połączenie do debbugera maszyny wirtualnej. Po tych operacjach DDMS jest w stanie komuniokować się z maszyną wirtualną, korzystając z dostosowanego protokołu.\cite{doc:ddms}
 
-Poniżej widać narzędzie Dalvik Debug Monitor. Na telefonie uruchomione są 2 procesy jednocześnie. Po prawej stronie widać wykres obciążenia procesora, poszczególnych procesów.
+Poniżej widać narzędzie Dalvik Debug Monitor. Na telefonie uruchomione są dwa dodatkowe, poza systemowymi, procesy jednocześnie. Po prawej stronie widać wykres obciążenia procesora, poszczególnych procesów.
 
 \begin{figure}[th] 
 \centering\includegraphics[width=10cm]{figures/dalvik}
@@ -26,7 +26,6 @@ Poniżej widać narzędzie Dalvik Debug Monitor. Na telefonie uruchomione są 2 
 \section{Zużycie procesora i pamięci}
 
 Każda aplikacja powoduje zużycie procesora oraz zajmuje miejsce w pamięci. Do pomiaru tych wielkości został użyty Dalvik Debug Monitor.
-
 
 Aplikację napisaną w Javie możemy konfigurować dowolnie. Między innymi możemy umożliwić aby była debugowalna, ustawiając parameter:
 

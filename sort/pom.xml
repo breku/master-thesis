@@ -28,6 +28,10 @@
             <groupId>com.googlecode.androidannotations</groupId>
             <artifactId>androidannotations</artifactId>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
 
 

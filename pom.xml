@@ -21,6 +21,7 @@
         <platform.version>4.1.1.4</platform.version>
         <android.plugin.version>3.8.2</android.plugin.version>
         <android.annotations.version>2.7.1</android.annotations.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -40,6 +41,12 @@
                 <groupId>com.googlecode.androidannotations</groupId>
                 <artifactId>androidannotations</artifactId>
                 <version>${android.annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -4,21 +4,21 @@
 \section{Programowanie}
 \label{c11}
 
-Programowanie jest to między innymi proces tworzenia aplikacji. Jest ono głównie kojarzone z wielkimi ilościami kodu napisanego przez programistów. W większości przypadków tak jest. Jednak sposób pisania kodu może się różnić. Możemy wydzielić programowanie od bardzo niskiego poziomu do wysokiego poziomu. Przy językach niskiego poziomu, np. Assembler operujemy na rejestrach procesora. Operacje są bardzo szybkie, jednak napisanie czegoś bardziej skomplikowanego zajęłoby ogromną ilość lini kodu oraz czasu. Następnie mamy języki wyższego poziomu, którego składnia ułatwia zrozumienie kodu programu przez osoby, które mają z tym kodem styczność.
+Programowanie jest to między innymi proces tworzenia aplikacji. Jest ono głównie kojarzone z wielkimi ilościami kodu napisanego przez programistów. W większości przypadków tak jest. Jednak sposób pisania kodu może się różnić. Można wydzielić programowanie od bardzo niskiego poziomu do wysokiego poziomu. Przy językach niskiego poziomu, np. Assembler operowanie odbywa się na rejestrach procesora. Operacje są bardzo szybkie, jednak napisanie czegoś bardziej skomplikowanego zajęłoby ogromną ilość lini kodu oraz czasu. Następnie istnieją języki wyższego poziomu, którego składnia ułatwia zrozumienie kodu programu przez osoby, które mają z tym kodem styczność.
 
-Aby jeszcze lepiej zrozumieć pisany kod powstała jeszcze jedna warstwa abstrakcji, gdzie tak naprawdę nie piszemy ani jednej linijki kodu. Jest to programowanie wizualne. Główne źródło naszego oprogramowania stanowią bloki graficzne i połączenia między nimi.
+Aby jeszcze lepiej zrozumieć pisany kod powstała jeszcze jedna warstwa abstrakcji, gdzie tak naprawdę nie jest wymagana od programistów ani jedna linijka kodu. Jest to programowanie wizualne. Główne źródło tworzonego oprogramowania stanowią bloki graficzne i połączenia między nimi.
 
 
 \subsection{Programowanie wizualne}
 \label{c111}
-Programowanie wizualne jest to programowanie, które pozwala użytkownikowi tworzyć programy poprzez manipulację elementów graficznie, niż jak w większości przypadków przy użyciu edytorów tekstowych. Prawie wszystkie akcje, które chcielibyśmy osiągnąć mogą zostać zrealizowane tylko za pomocą myszki.
+Programowanie wizualne jest to programowanie, które pozwala użytkownikowi tworzyć programy poprzez manipulację elementów graficznie, inaczej niż w większości przypadków przy użyciu edytorów tekstowych. Prawie wszystkie akcje, które możliwe do osiągnięcia mogą zostać zrealizowane tylko za pomocą myszki.
 
-Jednym z narzędzi, które pozwala tworzyć aplikacje wizualnie jest App Inventor. Za pomocą powyższego programu jesteśmy w stanie stworzyć aplikacje na system operacyjny android. Są to głównie telefony i tablety. App Inventor jest aplikacją internetową, dostępną z poziomu przeglądarki. Nie potrzebujemy dodatkowego środowiska do tworzenia programów. App inventor jest aplikacją stworzoną przez Google, a aktualnie utrzymywaną przez uniwersytet Massachusetts Institute of Technology (MIT). Wszystkie nowe osoby, które chciałyby zacząć programować i tworzyć oprogramowanie na system operacyjny Android mogą zacząć od App Inventora. Tworzenie aplikacji jest intuicyjne dzięki graficznemu interfejsowi, który umożliwia użytkownikowi akcje typu "przeciągnij i upuść" na interesujących go obiektach.\cite{wiki:appinventor} Są to proste czynności, które nie wymagają głębokiej wiedzy informatycznej. Osoby, które nigdy nie miały do czynienia z programowaniem, nie będą miały większych kłopotów z napisaniem aplikacji.
+Jednym z narzędzi, które pozwala tworzyć aplikacje wizualnie jest App Inventor. Za pomocą powyższego programu istnieje możliwość tworzenia aplikacji na system operacyjny android. Są to głównie telefony i tablety. App Inventor jest aplikacją internetową, dostępną z poziomu przeglądarki. Nie potrzebujemy dodatkowego środowiska do tworzenia programów. App inventor jest aplikacją stworzoną przez Google, a aktualnie utrzymywaną przez uniwersytet Massachusetts Institute of Technology (MIT). Wszystkie nowe osoby, które chciałyby zacząć programować i tworzyć oprogramowanie na system operacyjny Android mogą zacząć od App Inventora. Tworzenie aplikacji jest intuicyjne dzięki graficznemu interfejsowi, który umożliwia użytkownikowi akcje typu "przeciągnij i upuść" na interesujących go obiektach.\cite{wiki:appinventor} Są to proste czynności, które nie wymagają głębokiej wiedzy informatycznej. Osoby, które nigdy nie miały do czynienia z programowaniem, nie będą miały większych kłopotów z napisaniem aplikacji.
 
 \subsection{Programowanie natywne}
 \label{c112}
 
-Programowanie natywne jest to programowanie na daną platformę, a więc napisane oprogramowanie będzie na niej działać bez dodatkowych programów, takich jak maszyny wirtualne czy emulatory. W przypadku systemu Android jest to język Java. Jest to język obiektowy wysokiego poziomu. Po napisanu programu, kod jest kompilowany do kodu bajtowego, którym zajmuje się maszyna wirtualna. Ładuje pliki do pamięci, a następnie uruchamia zawarty w nich kod. Jednak Android nie posiada JVM. Zamiast JVM, Google wyposażył Android w maszynę Dalvik. Dalvik jest to maszyna wirtualna, przystosowana specjalnie do urządzeń mobilnych, gdzie szczególną uwagę należy zwrócić na małe zasoby pamięci, energii i niewielką prędkość procesorów. Kod bajtowy stworzony przez kompilator nie jest w 100\% kompatybilny z kodem bajtowym Javy. Nie możemy tutaj korzystać z bardziej zaawansowanych cech jakimi są Class Loadery czy Java Reflection API. \cite{gphone:dalvik}
+Programowanie natywne jest to programowanie na daną platformę, a więc napisane oprogramowanie będzie na niej działać bez dodatkowych programów. W przypadku systemu Android jest to język Java. Jest to język obiektowy wysokiego poziomu. Po napisanu programu, kod jest kompilowany do kodu bajtowego, którym zajmuje się maszyna wirtualna javy (JVM). Ładuje pliki do pamięci, a następnie uruchamia zawarty w nich kod. Jednak Android nie posiada JVM. Zamiast JVM, Google wyposażył Android w maszynę Dalvik'a. Dalvik jest to maszyna wirtualna, przystosowana specjalnie do urządzeń mobilnych, gdzie szczególną uwagę należy zwrócić na małe zasoby pamięci, energii i niewielką prędkość procesorów. Kod bajtowy stworzony przez kompilator nie jest w 100\% kompatybilny z kodem bajtowym Javy. Nie można tutaj korzystać z bardziej zaawansowanych cech jakimi są Class Loadery czy Java Reflection API. \cite{gphone:dalvik}
 
 \section{Cel i zakres pracy magisterskiej}
 \label{c12}
@@ -26,19 +26,28 @@ Programowanie natywne jest to programowanie na daną platformę, a więc napisan
 Celem pracy magisterskiej jest porównanie tworzenia aplikacji na platformę android przy pisaniu aplikacji w języku Java, oraz przy wykorzystaniu narzędzia oferowanego online - App Inventor. Praca zawiera porównanie tworzenia oprogramowania z różnych perespektyw, między innymi takich jak:
 \begin{itemize}
 \item Czas potrzebny na stworzenie aplikacji
-\item Możliwości jakie daje nam App Inventor, czego tam nie ma, a co można użyć
-\item Łatwość stworzenia aplikacji 
-\item Porównanie takich samych prostych aplikacji pod względem zużycia procesora oraz pamięci
+\item Możliwości jakie daje nam App Inventor, jakich rzeczy tam brakuje, a co można użyć
+\item Łatwość stworzenia aplikacji
+\item Porównanie takich samych aplikacji pod względem zużycia procesora oraz pamięci
+\item Porównanie wydajności tych samych algorytmów pod względem czasu
 \item Jak wygląda stworzenie bardziej zaawansowanej aplikacji korzystającej z wielu funkcji telefonu
 \item Czy jakieś dodatkowe narzędzia są potrzebne do tworzenia aplikacji
 \end{itemize}
 
-Dzięki takiemu porównaniu będziemy mieli czystszy obraz na narzędzie jakim jest App Inventor. Młodsze osoby zainteresowane programowaniem łatwiej będą mogły się zdecydować, w którą stronę pójść. Czy warto w ogóle zawracać sobie głowę App Inventorem, czy odrazu uczyć się Javy i mieć dostęp do wszystkch funkcji Androida. Dodatkowo nauczyciele informatyki będą mogli rozważyć naukę podstaw programowania poprzez tworzenie aplikacji na system Android. 
+Dzięki takiemu porównaniu powstanie czystszy obraz na narzędzie jakim jest App Inventor. Młodsze osoby zainteresowane programowaniem łatwiej będą mogły się zdecydować, w którą stronę pójść. Czy warto w ogóle zawracać sobie głowę App Inventorem, czy odrazu uczyć się Javy i mieć dostęp do wszystkch funkcji Androida. Dodatkowo nauczyciele informatyki będą mogli rozważyć naukę podstaw programowania poprzez tworzenie aplikacji na system Android.
 
-W pracy zostały również przedstawione wady oraz zalety pisania oprogramowania przy wykorzystaniu App Inventora. Programowanie wizualne, mimo że wydaje się łatwiejsze niesie ze sobą również pewne niedogodności. Pewnych rzeczy prawdopodobnie nie da się zrealizować, a pewne są do możliwe do zrealizowania w wiele prostszy sposób.
+W pracy zostały również przedstawione wady oraz zalety pisania oprogramowania przy wykorzystaniu App Inventora. Programowanie wizualne, mimo że wydaje się łatwiejsze niesie ze sobą również pewne niedogodności. Pewnych rzeczy prawdopodobnie nie da się zrealizować, a pewne są możliwe do zrealizowania w wiele prostszy sposób.
 
 
+\subsection{Struktura pracy magisterskiej}
 
+W rozdziale \Ref{c2} przedstawiono podstawowe pojęcia, które zostały użyte przy pisaniu pracy magisterskiej. Terminy te zostały wyjaśnione, aby bez problemu zrozumieć bardziej skomplikowane zagadnienia.
+
+W rozdziale \Ref{c2} zawarto teorię dotyczącą App Inventora.
+
+W rozdziale \Ref{c4} pokazano zastosowane podejście do rozwiązania problemu.
+
+W rozdziale \Ref{c5} przedstawiono wyniki uzyskanep podczas pisania pracy magisterskiej.
 
 
 
