@@ -51,12 +51,55 @@ Napisanie tej aplikacji w Javie nie było żadnym problemem. Bardzo łatwo było
 
 \subsection{Akcelerometr}
 
-Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akcelerometru, a następnie wyświetla je na ekran telefonu, z zadaną częstotliwością. O ile 
+Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akcelerometru, a następnie wyświetla je na ekran telefonu, z zadaną częstotliwością. Na poniższym wykresie przedstawione jest zużycie procesora dla różnych wartości próbkowania. Można zauważyć, że zużycie procesora dla aplikacji napisanej w Javie jest prawie stałe. Dzieje się tak dlatego że ustawianie częstotliwości próbkowania jest to tylko wskazówką dla systemu. Zdarzenia mogą być odbierane szybciej lub wolniej niż zadana częstotliwość. Zazwyczaj są odbierane szybciej. W tym przypadku są odbierane szybciej i zmiana częstotliwości na mniejszą, tak naprawdę nic tutaj nie zmienia, ponieważ zdarzenia dalej będą odbierane szybciej. Zużycie procesora prawdopodobnie będzie dalej stałe, gdy będziemy zmniejszać częstotliwość.\cite{doc:android}
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/accelerometerChart}
+\caption{Wykres przedstawiający zużycie procesora}
+\end{figure}
+
+W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości próbkowania. Aby to obejść, trzeba dodać nowy komponent Clock, który ma możliwość uruchamiania, co zadany czas. Można podejżewać, że wydajność akcelerometru jest niezmienna i częstotliwość próbkowania jest stała. Wyraźny spadek wydajności jest przez to, że musimy wywoływać metody w bardzo krótkich odstępach czasu i to, że one dodatkowo odczytują wartość sensora, nie wpływa znacząco na zużycie procesora.
 
 
+\subsection{Fibonacci}
 
+Następną stworzoną aplikacją jest aplikacja wyliczająca kolejny element ciągu Fibonnaciego. Testuje ona wydajność App Inventora. Złożoność takiego algorytmu to $O(2^n)$, czyli czas wykonywania będzie rósł bardzo szybko. Dodatkowo, kod jest napisany tak, aby metody wykonywały się rekurencyjnie, jednak aplikacja nie jest w stanie przetestować wielkości stosu. Dla bardzo małych liczb czas wykonywania się algorytmu jest bardzo wysoki.
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/fibonacciChart}
+\caption{Wykres przedstawiający czas obliczenia n-tego elementu z ciągu Fibonacciego}
+\end{figure}
+
+Osiągnięty rezultat wydajności nie jest zaskakujący po otrzymaniu wyników z poprzednich programów. Czas obliczenia już początkowych elementów ciągu Fibonnaciego jest bardzo duży. Przy liczeniu 20 elementu aplikacja napisana w App Inventorze potrzebuje ponad pół minuty, podczas gdy, aplikacja napisana w Javie potrzebuje na to około jedną setną sekundy.
+
+
+\subsection{Silnia}
+
+Następny program oblicza silnię danego elementu. Istnieje możliwość wyboru, iteracyjna lub rekursyjna wersja. Aby zaprezentować oba podejścia na jednym wykresie, została użyta skala logarytmiczna.
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/factorialChart}
+\caption{Wykres przedstawiający czas obliczenia silni danego elementu}
+\end{figure}
+
+Na powyższym wykresie można zaobserować wiele istotnych elementów. Aplikacja napisana w języku Java nie miała żadnych problemów w podejściu iteracyjnym. Zakres liczb nie został przekroczony, ze względu na możliwość wyboru typu danych. Potrzebna była tutaj klasa dla wielkich liczb całkowitych, dlatego został użyty typ BigInteger. Podczas użycia wersji rekurencyjnej, przy około liczeniu silni dla około 700, program rzuca wyjątek przepełnienia stosu (\english{Stack overflow}).
+
+Ciekawa sytuacja występuje dla aplikacji napisanej w App Inventorze. Program rzuca wyjątek podczas działania programu (\english{Runtime error}). Niestety, nie wiadomo co to za błąd, ponieważ w logach wiadomość o błędzie jest niedostępna. Wiadomość, którą otrzymujemy w logach wygląda następująco:
+
+\begin{lstlisting}
+E/com.google.appinventor.components.runtime.util.RuntimeErrorAlert:
+No error message available
+\end{lstlisting}
+
+Można się jedynie domyślać, że jest to błąd przepełnienia stosu lub przekroczenia zakresu liczb.
 
 
 \section{Zalety programowania wizualnego}
 
 \section{Wady programowania wizualnego}
+
+Przynajmniej na razie nie ma możliwości rozszerzenia App Inventora, więc jeżeli chciałbyś stworzyć coś lub skorzystać z czegoś, co nie jest wbudowane bezpośrednio w oferowaną platformę, jak np. grafika 3D, jesteś bez szans.
+
+Istnieją również ograniczenia dotyczące języka, takie jak niemożliwość przeniesienia komponentu jako parametr.
+
+Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności.

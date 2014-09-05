@@ -60,7 +60,7 @@ public class DefaultActivity extends Activity {
         long endTime = System.nanoTime();
 
         double timeSec = ((endTime - startTime) / Math.pow(10, 9));
-        DecimalFormat df = new DecimalFormat("#.########");
+        DecimalFormat df = new DecimalFormat("#########");
         timeTextView.setText(df.format(timeSec));
 
         resultTextView.setText(String.valueOf(result));
