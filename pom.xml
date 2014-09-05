@@ -13,6 +13,7 @@
         <module>accelerometer</module>
         <module>factorial</module>
         <module>fibonacci</module>
+        <module>database</module>
     </modules>
 
 

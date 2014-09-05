@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">java-default</string>
+    <string name="app_name">java-database</string>
     <string name="hello">Hello Default!</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
