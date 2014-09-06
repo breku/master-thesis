@@ -203,6 +203,19 @@ Repozytorium keystore, w którym znajduje się klucz domyślnie jest stworzone n
 \item \textbf{LEGO MINDSTORMS} - komponenty dostarczające kontrolę nad robotami poprzez bluetooth. W danej pracy magisterskiej zostały pominięte, ze względu na brak powyższych robotów.
 \end{itemize}
 
+\subsection{Android - przechowywanie danych}
+
+Urządzenie z systemem android dostarcza szereg mechanizmów dotyczących przechowywania danych. Każdy z nich stosujemy do czegoś innego.
+
+\begin{itemize}
+\item SharedPreferences - przechowuje pary klucz-wartość, czyli niewielkie ilości danych. Mechanizm wykorzystywany jest przede wszystkim do przechowywania ustawień aplikacji.\cite{tutorial:sqlite}
+\item Baza danych SQLite – wykorzystywane do przechowywania dużej ilości uporządkowanych danych, które ze względu na swoja ilość wymagają wysokiej wydajności dostępu.\cite{tutorial:sqlite}
+\item Pliki - w związku z wykorzystaniem bazy SQLite, która nie obsługuje przechowywania plików, dane binarne (zdjęcia, filmy, inne pliki) powinniśmy przechowywać w ich niezmiennej formie, na karcie lub pamięci wbudowanej w urządzenie.\cite{tutorial:sqlite}
+\end{itemize}
+
+
+
+
 
 
 
