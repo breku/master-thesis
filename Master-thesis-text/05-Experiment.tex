@@ -12,7 +12,7 @@ Aplikacje zostały najpierw stworzone w App Inventorze, a następnie zostały pr
 Aplikacja polega na wygenerowaniu listy losowych elementów, a następnie posortowaniu jej. Do sortowania został użyty prosty algorytm sortowania przez wybieranie \english{Selection Sort}.
 
 \begin{figure}[th] 
-\centering\includegraphics[width=10cm]{figures/apps/sort}
+\centering\includegraphics[width=15cm]{figures/apps/sort}
 \caption{Aplikacja sortująca - App Inventor}
 \end{figure}
 
@@ -105,6 +105,35 @@ Aplikacja stworzona aby sprawdzić szybkość działania bazy danych oferowanej 
 Na powyższym wykresie można zauważyć przewagę wydajności aplikacji napisanej w Javie. App Inventor uzyskał podobny rezultat wydajności, jak aplikacja napisana w Javie, która używa bazy danych SQLite. Jak wspomniano wcześniej odczyt/zapis danych z bazy SQLlite powinien być wolniejszy niż korzystanie z SharedPreferences. SQLite uzykuje tutaj lepszy rezultat TinyDB - odpowiednik SharedPreferences. Można łatwo wyciągnąć wniosek, że wydajność TinyDB jest bardzo niska. Jeżeli porównamy TinyDB i SharedPreferences przewaga aplikacji napisanej w Javie jest ogromna.
 
 
+\subsection{Animacja}
+
+Aplikacja testuje możliwości animacyjne App Inventora. Wiadomo że komponenty potrzebne są dostępne, jednak nie wiadomo, czy wydajność pozwoli na płynną animację. Mimo że tworzenie animacji może wydawać się trudne, za pomocą App Inventora stworzenie animacji odbywa się tylko w kilku krokach. Największym problemem było znalezienie odpowiednich klatek, gdzie ostatnia wygląda tak samo jak pierwsza, aby była możliwość zapętlenia.
+
+
+\begin{figure}[H]
+\centering\includegraphics[width=15cm]{figures/apps/ai_animation}
+\caption{Bloki potrzebne do stworzenia aplikacji}
+\end{figure}
+
+Na głównym ekranie aplikacji stworzone jest płótno oraz jeden obrazek, który podmieniamy co zadany interwał czasu. Ostatecznym rezulatatem jest płynna animacja. Dopiero przy bardzo niskim interwale czasowym (szybkiej zmianie klatek), można być odczyć przycinanie się ekranu.
+
+
+\subsection{Kolizja elementów}
+
+Aplikacja sprawdzająca możliwość detekcji kolzji poruszających się elementów. Na płótnie zostało umieszczone kilka elementów. Elementy w kolorze czarnym poruszają się po płótnie i kiedy dotrą do ściany odbijają się od niej. Element o kolorze niebieskim jest sterowanym za pomocą akcelerometru. Pochylając telefon przesuwamy element po płaszczyźnie.
+
+\begin{figure}[H]
+\centering\includegraphics[width=5cm]{figures/apps/ai_collision}
+\caption{Wygląd aplikacji testującec kolizje}
+\end{figure}
+
+Aplikacja działa płynnie, dla takiej ilości elementów. Wadą, którą można tutaj zauważyć, jest brak ogólnego komponentu odpowiedzialnego za zdarzenia lub możliwość przekazania parametru do zdarzenia. Jak widać na poniższym obrazku, tyle ile mamy komponentów, tyle musimy stworzyć zdarzeń odpowiedzialnych za odbicie od ściany. W danym przypadku nie jest to większym problemem. Ale kiedy istnieje potrzeba stworzenia aplikacji, która ma tych komponentów znaczącą ilość, jedną opcją jest wyklikanie zdarzeń po kolei dla wszystkich elementów.
+
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/ai_collision_blocks}
+\caption{Bloki odpowiedzialne za zdarzenia kolizji ze ścianą}
+\end{figure}
 
 
 
@@ -114,7 +143,5 @@ Na powyższym wykresie można zauważyć przewagę wydajności aplikacji napisan
 \section{Wady programowania wizualnego}
 
 Przynajmniej na razie nie ma możliwości rozszerzenia App Inventora, więc jeżeli chciałbyś stworzyć coś lub skorzystać z czegoś, co nie jest wbudowane bezpośrednio w oferowaną platformę, jak np. grafika 3D, jesteś bez szans.
-
-Istnieją również ograniczenia dotyczące języka, takie jak niemożliwość przeniesienia komponentu jako parametr.
 
 Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności.
