@@ -58,6 +58,9 @@ Zmiany, które zostają wprowadzone, natychmiast reflektują na działanie aplik
 \caption{Android Device Emulator}
 \end{figure}
 
+\section{Pozostałe istotne komponenty}
+
+W danym rozdziale zostały zawarte pozostałe komponenty, które zostały użyte podczas pisania pracy. Związane są one zarówno z App Inventorem, jak i z aplikacjami napisanymi w Javie.
 
 \subsection{Android SDK}
 
@@ -94,4 +97,115 @@ System android wymaga, aby aplikacje na nim instalowane były cyfrowo podpisane.
 \subsection{Zużycie procesora}
 
 Czas pracy procesora jest to czas, w którym procesor (\english{CPU}) został użyty to przetwarzania zadanych instrukcji, w przeciwieństwie do oczekiwania na wejście/wyjście lub przejścia w stan oczekiwania (\english{Idle mode}). Zużycie procesora natomiast mierzone jest w procentach jako całkowitej wydajności procesora. Główne zastosowanie to określenie ogólnej zajętości systemu. Wysokie zużycie procesora oznacza zbyt małą moc procesora, lub zbyt wygórowane oczekiwania użytkownika.
+
+
+\section{Ważne koncepcje i pojęcia dotyczące App Inventora}
+
+Istnieje kilka pojęć, które są warte uwagi. Zostały one zawarte w tym rozdziale.
+
+\subsection{Publikacja aplikacji na Google Play}
+
+Aplikacje zbudowane za pomocą App Inventora mogą zostać przesłane do marketu Google Play. Każda aplikacja, która ma zostać opublikowana musi posiadać wersję kodu (\english{VersionCode}) oraz nazwę wersji (\english{VersionName}). Te parametry można ustawić we właściwościach głównego komponentu\cite{doc:concepts}. Wersja kodu jest to całkowita wartość, która nie jest widoczna dla użytkowników w Google Play. Potrzebna jest do sprawdzenia czy aplikacja została aktualizowana lub dezaktualizowana do poprzedniej wersji. Nazwa wersji może być dowolna jednak wg konwencji powinna to być liczba zmiennoprzecinkowa. Domyślnie posiada wartość 1.0. Jest ona zwiększana o 0.1 lub 1 dla małej i dużej zmiany.
+
+Skończony projekt możemy wyeksportować do pliku .apk, który jest automatycznie cyfrowo podpisany kluczem prywatnym powiązanym z naszym kontem. Kiedy tworzymy nową wersję ten sam klucz jest używany do podpisu. Kiedy urządzenie z system android posiada zainstalowaną aplikację, zapamiętuje on klucz który został użyty do podpisu. Aby zainstalować wyższą wersję aplikacji ten sam klucz musi zostać użyty do podpisu.
+
+Repozytorium keystore, w którym znajduje się klucz domyślnie jest stworzone na serwerze, więc nie trzeba się tym martwić. Istnieje również opcja eksportu i importu repozytorium. Jest ona przydatna przy przenoszeniu projektu na inny serwer.
+
+\subsection{Paleta z dostępnymi komponentami}
+
+\begin{itemize}
+
+\item \textbf{User Interface} - w większości widoczne komponenty, które są związane z interfejsem użytkownika.
+\begin{itemize}
+\item Button - przycisk.
+\item CheckBox - pole wyboru.
+\item DatePicker - komponent dający możliwość wyboru daty.
+\item Image - komponent umożliwiający wyświetlenie przesłanego zdjęcia.
+\item Label - etykieta, na której zwykle wyświetlany jest kawałek tekstu.
+\item ListPicker - komponent, który po kliknięciu wyświetla listę, z której użytkownik może wybrać wartość. Daje on także możliwość automatycznego osadzenia wyszukiwarki na liście.
+\item ListView - komponent, który pozwala na osadzenie i wyświetlenie listy elemenentów
+\item Notifier - komponent wyświetlający powiadomienia, a także umożliwiający logowanie na 3 poziomach (Error, Warn, Info).
+\item TextBox - komponent umożliwiający wpisywanie tekstu.
+\item PasswordTextBox - taki sam komponent jak TextBox jednak wpisywany tekst nie jest widoczny dla użytkownika.
+\item Slider - jest to pasek postępu, który dodatkowo umożliwia użytkownikowi przeciąganie.
+\item Spinner - element wyświetlający pop-up z listą elementów do wyboru.
+\item TimePicker - element pozwalający na wybór czasu.
+\item WebViewer - komponenet umożliwiający umieszczenie dowolnej strony internetowej w aplikaji.
+\end{itemize}
+
+\item \textbf{Layout} - Komponenty odpowiedzialne za rozmieszczenie pozostałych komponentów. Są to kontenery, w które mogą zostać umieszczane inne widoczne komponenty.
+\begin{itemize}
+\item HorizontalArrangement - elementy umieszczone w tym kontenerze są układanej od lewej do prawej.
+\item VerticalArrangement - odwrotne działanie do poprzedniego komponentu - elementu są umieszczany od góry do dołu.
+\item TableArrangement - element umożliwiający ustawienie elementów postaci tabularnej
+\end{itemize}
+
+
+\item \textbf{Media} - Komponenty związane głównie z dźwiękiem oraz kamerą.
+\begin{itemize}
+\item Camcorder - komponent umożliwiający nagrywanie filmów. Istnieje możliwość nadania nazwy pliku zawierającego nagranie.
+\item Camera - komponent umożliwiający robienie zdjęć i zapisywanie ich.
+\item ImagePicker - komponent uruchamiający galerię zdjęć zawartą na telefonie i dający możliwość wyboru zdjęciu. Zdjęcie po wybraniu jest kopiowane na kartę SD (maksymalna ilość zdjęć to 10). Następnie możemy z danego zdjęcia skorzystać w aplikacji i je wyświetlić.
+\item Player - komponent odtwarząjący muzykę, a także odpowiedzialny za wywołanie wibracji w telefonie.
+\item Sound - komponent odtwarzający dźwięki, w porównaniu do poprzedniego, dźwięki powinny mieć krótki czas trwania, podczas gdy muzyka może trwać długo.
+\item SoundRecorder - komponent nagrywający dźwięk
+\item SpeechRecognizer - komponent umożliwiający rozpoznanie mowy i stworzenie z niej tekstu
+\item TextToSpeech - komponent o odwrotnym działaniu do poprzedniego, zamieniający tekst na mowę. Wsparcie dla języków: czeski, hiszpański, niemiecki, francuski, duński, włoski, polski, angielski.
+\item VideoPlayer - komponent umożliwiający odtwarzanie filmu podczas działającej aplikacji. Pliki wideo muszą mieć poniżej 1MB, dodatkowo rozmiar całkowitej aplikacji wynosi maksymalnie 5MB.
+\item YandexTranslate - komponent umożliwiający tłumaczenie tekstu pomiędzy językami. Korzysta on z serwisu o nazwie Yandex - https://translate.yandex.com. dodatkowo urządzenie musi być podłączone do internetu. 
+\end{itemize}
+
+
+\item \textbf{Drawing and Animation} Komponenty umożliwiające rysowanie oraz animacje.
+\begin{itemize}
+\item Canvas - płótno, na którym możemy rysować dwuwymiarowe obrazki (\english{Sprite}). Obrazki te mogą się na płótnie poruszać. Każda lokalizacja na płótnie jest specyfikowana za pomocą współrzędnych X,Y.
+\item ImageSprite - obrazek, który możemy umieścić na płótnie i który może reagować na dotyk, przeciąganie
+\item Ball - jest to ImageSprite, który ma ustawiony obrazek jako koło o określanym kolorze.
+\end{itemize}
+
+\item \textbf{Sensors} Niektóre z sensorów, dostępnych na telefonie. Wszystkie z tych komponentów są niewidoczne.
+\begin{itemize}
+\item AccelerometerSenser - akcelerometr, komponent, który umożliwia wykrycie trzęsienia telefonem, a daje wartości, odpowiadające aktualnemu wychyleniu telefonu.
+\item BarcodeScanner - komponent umożliwiający skanowanie kodów kreskowych, jednak musimy posiadać dodatkowo aplikację do tego zainstalowaną już na telefonie.
+\item Clock - Zegar oraz czasomierz
+\item LocationSensor - komponent dostarczający informacje o położeniu gdzie się znajdujemy, czyli szerokość i długość geograficzną. Informacje te mogą nie być odrazu dostępne i musimy na nie poczekać.
+\item NearField - komponent dostarczający możliwośći NFC. Dotychczas komponent ten umożliwia czytanie i wysyłanie tagów tekstowych.
+\item OrientationSensor - żyroskop - komponent dostarczający informację o urządzeniu w 3 wymiarach.
+\end{itemize}
+
+\item \textbf{Social} - komponenty związane z kontaktami, e-mailami i serwisami społecznościowymi.
+\begin{itemize}
+\item ContactPicker - przycisk, który po naciśnięciu wyświetla listę kontaktów do wyboru. Gdy użytkownik dokona wyboru ma dostęp do następujących danych: nazwa kontaktu, e-maile, telefony, zdjęcie kontaktu.
+\item EmailPicker - textBox z pomocą dla użytkownika. Pomoc ta polega na wyświetleniu listy, która zawiera emaile pasujące do wpisywanego tekstu.
+\item PhoneCall - komponent umożliwiający uruchomienie dzownienia do osoby, którą wcześniej ustawimy jako właściwość komponentu.
+\item PhoneNumberPicker - przycisk o podobnym działaniu do komponentu ContactPicker.
+\item Sharing - niewidoczny komponent, który umożliwia udostępnienie wiadomości lub pliku innym aplikacjom
+\item Texting - komponent odpowiedzialny za zarządzanie wiadomościami. Jeżeli aplikacja działa w tle, zdarzenie przyjścia wiadomości również będzie uruchomione. Nawet jeżeli aplikacja nie jest uruchomiona pojawi się powiadomienie o przyjściu wiadomości, po kliknięciu w nie uruchomi się aplikacja
+\item Twitter - komponent umożliwiający komunikację z serwisem internetowym Twitter. Jeżeli użytkownik zostanie pozytywnie zautentykowany i zautoryzowany, pojawia się wiele możliwości, min. szukanie tweetów, wysyłanie tweetów, wiadomości, obrazków.
+\end{itemize}
+
+\item \textbf{Storage} - komponenty odpowiedzialne za przechowywanie danych.
+\begin{itemize}
+\item File - niewidoczny komponent umożliwiający zapis i odczyt pliku. Domyślne ustawienia zapisują pliki do prywatnego katalogu App Inventora, jednak istnieje możliwość ustawienia innej ścieżki
+\item FusiontablesControl - komponent, który komunikuje się z serwisem internetowym dostarczonym przez Google o nazwie Fusion Tables. Tabele te umożliwiają wizualizację, udostępnienie, zapis danych. Komponent ten daj możliwość dostępu do tych danych a także jej edycji.
+\item TinyDB - baza danych dla aplikacji. Jest to odpowiednik klasy Javy - SharedPreferences. Można sobie ją wyobrazić jako mapę - klucz/wartość.
+\item TinyWebDB - niewidoczny komponent, komunikujący się z internetową bazą danych.
+\end{itemize}
+
+\item \textbf{Connectivity} 
+\begin{itemize}
+\item ActivityStarter
+\end{itemize}
+
+
+\item \textbf{LEGO MINDSTORMS} 
+
+
+
+\end{itemize}
+
+
+
+
+
 
