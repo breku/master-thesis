@@ -58,9 +58,9 @@ public class DefaultActivity extends Activity {
     public void buttonSave() {
         int numberOfValues = Integer.valueOf(editText.getText().toString());
 
-        if(sqlLiteRadio.isChecked()){
+        if (sqlLiteRadio.isChecked()) {
             saveSQLite(numberOfValues);
-        }else if(sharedPreferencesRadio.isChecked()){
+        } else if (sharedPreferencesRadio.isChecked()) {
             saveSharedPrefs(numberOfValues);
         }
     }
@@ -69,7 +69,7 @@ public class DefaultActivity extends Activity {
         long startTime = System.nanoTime();
 
         for (int i = 0; i < numberOfValues; i++) {
-            myPrefs.getSharedPreferences().edit().putInt(String.valueOf(i),i);
+            myPrefs.getSharedPreferences().edit().putInt(String.valueOf(i), i);
         }
 
         long endTime = System.nanoTime();
@@ -80,7 +80,7 @@ public class DefaultActivity extends Activity {
 
     }
 
-    private void saveSQLite(int numberOfValues){
+    private void saveSQLite(int numberOfValues) {
 
         long startTime = System.nanoTime();
         databaseService.save(numberOfValues);
@@ -94,21 +94,21 @@ public class DefaultActivity extends Activity {
 
     @Click
     public void buttonGet() {
-        if(sqlLiteRadio.isChecked()){
+        if (sqlLiteRadio.isChecked()) {
             List<Integer> list = getSQLite();
-        }else if(sharedPreferencesRadio.isChecked()){
+        } else if (sharedPreferencesRadio.isChecked()) {
             List<Integer> list = getSharedPrefs();
         }
     }
 
-    private List<Integer> getSharedPrefs(){
+    private List<Integer> getSharedPrefs() {
         int numberOfValues = Integer.valueOf(editText.getText().toString());
 
         long startTime = System.nanoTime();
 
         List<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i <numberOfValues; i++) {
-            result.add(myPrefs.getSharedPreferences().getInt(String.valueOf(i),i));
+        for (int i = 0; i < numberOfValues; i++) {
+            result.add(myPrefs.getSharedPreferences().getInt(String.valueOf(i), i));
         }
         long endTime = System.nanoTime();
 
@@ -119,7 +119,7 @@ public class DefaultActivity extends Activity {
     }
 
 
-    private List<Integer> getSQLite(){
+    private List<Integer> getSQLite() {
         long startTime = System.nanoTime();
         List<Integer> values = databaseService.getValues();
         long endTime = System.nanoTime();
@@ -133,9 +133,9 @@ public class DefaultActivity extends Activity {
     @Click
     public void buttonClear() {
 
-        if(sqlLiteRadio.isChecked()){
+        if (sqlLiteRadio.isChecked()) {
             databaseService.clearDB();
-        }else if(sharedPreferencesRadio.isChecked()){
+        } else if (sharedPreferencesRadio.isChecked()) {
             myPrefs.clear();
         }
 
