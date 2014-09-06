@@ -35,6 +35,16 @@
                 android:text="clear"
                 android:id="@+id/buttonClear" android:layout_weight="1"/>
     </LinearLayout>
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shared Prefs"
+                android:id="@+id/sharedPreferencesRadio" android:checked="true"/>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SQL" android:id="@+id/sqlLiteRadio"/>
+    </RadioGroup>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

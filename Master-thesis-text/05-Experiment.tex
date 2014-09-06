@@ -93,6 +93,21 @@ No error message available
 
 Można się jedynie domyślać, że jest to błąd przepełnienia stosu lub przekroczenia zakresu liczb.
 
+\subsection{Database}
+
+Aplikacja stworzona aby sprawdzić szybkość działania bazy danych oferowanej przez App Inventora. Został tutaj wykorzystany komponent TinyDB. Odpowiada on klasie Javy SharedPreferences, czyli jest to baza danych typu klucz/wartość. Aby odczytać dane z pamięci trzeba znać klucz do tych danych. Jest to bardzo łatwe w przypadku małych ilości danych, jednak trudno jest przechowywać większy struktury, ze względu na potrzebę znania klucza dla każdego wiersza. Duże ilości danych powinny być przechowywane w bazie danych SQLite, ponieważ organizacja danych i zarządzanie nimi jest wydajniejsze. Aby otrzymać część danych z bazy, trzeba posłużyć się językiem zapytań SQL. Daje to możliwość wyszukiwania interesujących nas danych. Z drugiej strony zarządzanie i przeszukiwanie dużych zbiorów danych wpływa na wydajność, więc czytanie danych z bazy danych może być wolniejsze niż czytanie danych z SharedPreferences.
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/databaseChart}
+\caption{Wykres przedstawiający czas potrzebny na zapis/odczyt n-elementów}
+\end{figure}
+
+Na powyższym wykresie można zauważyć przewagę wydajności aplikacji napisanej w Javie. App Inventor uzyskał podobny rezultat wydajności, jak aplikacja napisana w Javie, która używa bazy danych SQLite. Jak wspomniano wcześniej odczyt/zapis danych z bazy SQLlite powinien być wolniejszy niż korzystanie z SharedPreferences. SQLite uzykuje tutaj lepszy rezultat TinyDB - odpowiednik SharedPreferences. Można łatwo wyciągnąć wniosek, że wydajność TinyDB jest bardzo niska. Jeżeli porównamy TinyDB i SharedPreferences przewaga aplikacji napisanej w Javie jest ogromna.
+
+
+
+
+
 
 \section{Zalety programowania wizualnego}
 
