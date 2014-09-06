@@ -25,8 +25,6 @@ public class DefaultActivity extends Activity {
 
     private DatabaseService databaseService = new DatabaseService(this);
 
-    public static final String PREFS_NAME = "MY_PREFS";
-
     @Pref
     MyPrefs_ myPrefs;
 
