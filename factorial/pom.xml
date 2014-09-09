@@ -9,7 +9,7 @@
 
     <parent>
         <groupId>com.brekol</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>masterthesis</artifactId>
         <version>1.0</version>
     </parent>
 
