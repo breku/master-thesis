@@ -158,6 +158,62 @@ Ustawiając powyższe parametry, uruchomi się przeglądarka internetowa na stro
 
 Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ogarniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany paramter otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją odrazu odczytać.
 
+\subsection{Think Faster}
+
+App Inventor oferuje bardzo wiele elementów i rozwiązań. Aby sprawdzić jak mają się one w praktyce podjęto próbę skopiowania gry napisanej wcześniej w języku Java. Jest to gra o nazwie \emph{Think Faster}. Znajduje się ona w markecie Google Play pod poniższym adresem internetowym:
+
+\begin{lstlisting}
+https://play.google.com/store/apps/details?id=com.thinkfaster
+\end{lstlisting} 
+
+Gra polega na rozwiązywaniu działań matematycznych, które mają różny stopień trudności. 
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/thinkfaster_newgame}
+\caption{Główny ekran aplikacji}
+\end{figure}
+
+Na powyższym ekranie widać w jaki sposób użytkownik musi rozwiązywać działania matematyczne. Do rozwiązania jest ostatnie działanie na dole ekranu. Można zauważyć, że jest ono błędne, więc gracz powienien kliknąć krzyżyk. Działania będą płynnie przesuwały się z góry na dół. Po nabraniu wprawy, można patrzeć na więcej przykładów, niż tylko to na samym dole i tym samym szybciej je rozwiązywać, co skutkuje większą ilością punktów. Na górze ekranu widać uciekający czas. Po prawidłowym kliknięciu czas zostaje minimalnie zwiększony oraz przez chwilę robi się zielony. Odwrotnie jest przy nieprawidłowym rozwiązaniu przykładu i kliknięciu nie tego przycisku. Część czasu zostaje ucięta i zabarwiona na chwilę na czerwono. Do napisania tej gry użyto dodatkowo bibliotekę AndEngine, która umożliwia animację dwuwymiarową i znacznie ułatwia pisanie kodu.
+
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/sonarThinkFaster}
+\caption{Statystyki zebrane przez aplikację Sonar}
+\end{figure}
+
+Można wywnioskować zatem z powyższego opisu oraz ze statystyk przedstawionych przez aplikację Sonar, że \emph{Think Faster} nie jest bardzo skomplikowaną grą. Około dwa tysiące lini kodu, z czego część jest testami, nie robi dużego wrażenia.
+
+Próba skopiowania takiej aplikacji nie zakończyła się całkowitym sukcesem, ale nie można powiedzieć, że zakończyła się porażką.
+
+Na samym początku tworzenia pojawił się problem z paskiem statusu androida, którego nie da się schować w App Inventorze. Mimo wszystko istnieje do tego obejście. Trzeba pobrać plik \emph{apk} na komputer. Następnie go zdekompilować i wyedytować plik \emph{AndroidManifest.xml} dodając następującą właściwość, w każdym Activity, w którym nie ma się pojawiać pasek statusu:
+\begin{lstlisting}
+android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+\end{lstlisting}
+Aplikację następnie trzeba zbudować i podpisać cyfrowo, aby zainstalować ją na urządzeniu.
+
+Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełącznia ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów i funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodakowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
+
+Ekran menu w oryginalnej aplikacji wygląda następująco:
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/thinkfaster_menu}
+\caption{Ekran menu gry}
+\end{figure}
+
+Nie jest on skomplikowany. Dlatego też całkowicie udało się go odtworzyć w App Inventorze. Wykorzystano komponent Canvas, a poszczególne przyciski były obrazkami z danym napisem. Zaczynając od dołu ekranu, przycisk wyjście udało się obsłużyć i wyjść z aplikacji. Dodatkowo istnieje zdarzenie naciśnięcia klawisza systemowego wstecz, który można obsłużyć we własny sposób. Ekran pomocy również udało się całkowicie odtworzyć. Zawiera on jedynie komponent Canvas rozciągnięty na cały ekran, na którym znajduje się obrazek.
+
+Wybierając nową grę użytkownik przechodzi do wyboru ekranu z typem gry. Zaprezentowany ekran widać poniżej:
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/thinkfaster_gametype}
+\caption{Ekran wyboru rodzaju gry}
+\end{figure}
+
+Na tym ekranie użytkownik wybiera pomoziom trudniości oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. W poniższym akapicie jest wytłumaczone dlaczego.
+
+Uruchamiając nową grę wiele rzeczy na początku musi zostać stworzone. Pierwszym elementów jest pasek z uciekającym czasem. 
+
+
 
 
 
