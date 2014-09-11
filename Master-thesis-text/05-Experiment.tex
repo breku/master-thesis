@@ -1,7 +1,7 @@
 \chapter{Wyniki eksperymentu}
 \label{c5}
 
-Dany rozdział zawiera wyniki z przeprowadzonych badań oraz wnioski. Każda aplikacja, która została napisana została przestawiona i opisana z różnych perespektyw. Na końcu rozdziału zostały przedstawione wady i zalety obu podejść.
+Dany rozdział zawiera wyniki z przeprowadzonych badań oraz wnioski. Każda aplikacja, która została napisana została przestawiona i opisana z różnych perspektyw. Na końcu rozdziału zostały przedstawione wady i zalety obu podejść.
 
 \section{Stworzone aplikacje}
 
@@ -16,9 +16,9 @@ Aplikacja polega na wygenerowaniu listy losowych elementów, a następnie posort
 \caption{Aplikacja sortująca - App Inventor}
 \end{figure}
 
-Na powyższym rysunku widać bloki potrzebne do stowrzenia aplikacji w App Inventorze. Bez głębszej analizy zrozumienie działania bloków, może okazać się kłopotliwe. Jest to prosty algorytm, a napisanie go za pomocą dostępnych bloków okazało się skomplikowane. Można sobie łatwo wyobrazić, że napisanie bardziej skomplikowanego algorytmu byłoby bardzo nieczytelne. Ilość użytych bloków zdecydowanieby wzrosła, dodatkowo utrzymanie takiej aplikacji niesie za sobą wysokie koszty wprowadzenia nowych osób do jej rozwijania.
+Na powyższym rysunku widać bloki potrzebne do stowrzenia aplikacji w App Inventorze. Bez głębszej analizy zrozumienie działania bloków, może okazać się kłopotliwe. Jest to prosty algorytm, a napisanie go za pomocą dostępnych bloków okazało się skomplikowane. Można sobie łatwo wyobrazić, że napisanie bardziej skomplikowanego algorytmu byłoby bardzo nieczytelne. Ilość użytych bloków zdecydowanie by wzrosła, dodatkowo utrzymanie takiej aplikacji niesie za sobą wysokie koszty wprowadzenia nowych osób do jej rozwijania.
 
-Sortowanie napisanie w javie jest zrozumiałe dla każdego programisty. Do sortowania została użyta lista, jako odpowiednik listy w App Inventorze, nie ma tam dostępnych tablic.
+Sortowanie napisanie w Javie jest zrozumiałe dla każdego programisty. Do sortowania została użyta lista, jako odpowiednik listy w App Inventorze, nie ma tam dostępnych tablic.
 
 
 \begin{lstlisting}
@@ -120,11 +120,11 @@ Na głównym ekranie aplikacji stworzone jest płótno oraz jeden obrazek, któr
 
 \subsection{Kolizja elementów}
 
-Aplikacja sprawdzająca możliwość detekcji kolzji poruszających się elementów. Na płótnie zostało umieszczone kilka elementów. Elementy w kolorze czarnym poruszają się po płótnie i kiedy dotrą do ściany odbijają się od niej. Element o kolorze niebieskim jest sterowanym za pomocą akcelerometru. Pochylając telefon przesuwamy element po płaszczyźnie.
+Aplikacja sprawdzająca możliwość detekcji kolizji poruszających się elementów. Na płótnie zostało umieszczone kilka elementów. Elementy w kolorze czarnym poruszają się po płótnie i kiedy dotrą do ściany odbijają się od niej. Element o kolorze niebieskim jest sterowanym za pomocą akcelerometru. Pochylając telefon przesuwamy element po płaszczyźnie.
 
 \begin{figure}[H]
 \centering\includegraphics[width=5cm]{figures/apps/ai_collision}
-\caption{Wygląd aplikacji testującec kolizje}
+\caption{Wygląd aplikacji testującej kolizje}
 \end{figure}
 
 Aplikacja działa płynnie, dla takiej ilości elementów. Wadą, którą można tutaj zauważyć, jest brak ogólnego komponentu odpowiedzialnego za zdarzenia lub możliwość przekazania parametru do zdarzenia. Jak widać na poniższym obrazku, tyle ile mamy komponentów, tyle musimy stworzyć zdarzeń odpowiedzialnych za odbicie od ściany. W danym przypadku nie jest to większym problemem. Ale kiedy istnieje potrzeba stworzenia aplikacji, która ma tych komponentów znaczącą ilość, jedną opcją jest wyklikanie zdarzeń po kolei dla wszystkich elementów.
@@ -173,7 +173,7 @@ Gra polega na rozwiązywaniu działań matematycznych, które mają różny stop
 \caption{Główny ekran aplikacji}
 \end{figure}
 
-Na powyższym ekranie widać w jaki sposób użytkownik musi rozwiązywać działania matematyczne. Do rozwiązania jest ostatnie działanie na dole ekranu. Można zauważyć, że jest ono błędne, więc gracz powienien kliknąć krzyżyk. Działania będą płynnie przesuwały się z góry na dół. Po nabraniu wprawy, można patrzeć na więcej przykładów, niż tylko to na samym dole i tym samym szybciej je rozwiązywać, co skutkuje większą ilością punktów. Na górze ekranu widać uciekający czas. Po prawidłowym kliknięciu czas zostaje minimalnie zwiększony oraz przez chwilę robi się zielony. Odwrotnie jest przy nieprawidłowym rozwiązaniu przykładu i kliknięciu nie tego przycisku. Część czasu zostaje ucięta i zabarwiona na chwilę na czerwono. Do napisania tej gry użyto dodatkowo bibliotekę AndEngine, która umożliwia animację dwuwymiarową i znacznie ułatwia pisanie kodu.
+Na powyższym ekranie widać w jaki sposób użytkownik musi rozwiązywać działania matematyczne. Do rozwiązania jest ostatnie działanie na dole ekranu. Można zauważyć, że jest ono błędne, więc gracz powinien kliknąć krzyżyk. Działania będą płynnie przesuwały się z góry na dół. Po nabraniu wprawy, można patrzeć na więcej przykładów, niż tylko to na samym dole i tym samym szybciej je rozwiązywać, co skutkuje większą ilością punktów. Na górze ekranu widać uciekający czas. Po prawidłowym kliknięciu czas zostaje minimalnie zwiększony oraz przez chwilę robi się zielony. Odwrotnie jest przy nieprawidłowym rozwiązaniu przykładu i kliknięciu nie tego przycisku. Część czasu zostaje ucięta i zabarwiona na chwilę na czerwono. Do napisania tej gry użyto dodatkowo bibliotekę AndEngine, która umożliwia animację dwuwymiarową i znacznie ułatwia pisanie kodu.
 
 
 \begin{figure}[H]
@@ -191,7 +191,7 @@ android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
 \end{lstlisting}
 Aplikację następnie trzeba zbudować i podpisać cyfrowo, aby zainstalować ją na urządzeniu.
 
-Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełącznia ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów i funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodakowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
+Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełącznia ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów i funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodatkowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
 
 Ekran menu w oryginalnej aplikacji wygląda następująco:
 
@@ -209,9 +209,19 @@ Wybierając nową grę użytkownik przechodzi do wyboru ekranu z typem gry. Zapr
 \caption{Ekran wyboru rodzaju gry}
 \end{figure}
 
-Na tym ekranie użytkownik wybiera pomoziom trudniości oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. W poniższym akapicie jest wytłumaczone dlaczego.
+Na tym ekranie użytkownik wybiera poziom trudniości oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. Poniżej jest wytłumaczone dlaczego.
 
-Uruchamiając nową grę wiele rzeczy na początku musi zostać stworzone. Pierwszym elementów jest pasek z uciekającym czasem. 
+Uruchamiając nową grę wiele rzeczy na początku musi zostać stworzone. Pierwszym z elementów jest pasek z uciekającym czasem. Został stworzony jako prostokątny obrazek przesuwający się w lewo. Jedynym problemem było, kiedy nastąpiła kolizja ze krawędzią ekranu. W App Inventorze nie ma możliwości wyłączenia jej. Obejście tego problemu to zmniejszanie rozmiaru obrazka z taką samą prędkością jaką poruszał się on na początku.
+
+Kolejnym elementem są przyciski, mówiące przy działanie matematyczne jest poprawne lub niepoprawne. Przy tworzeniu ich nie pojawiły się żadne problemy. Są to zwykłe obrazki nałożone na płótnie. Posiadają one zdarzenie \emph{TouchUp}, które jest wywoływane w momencie podniesienia palca z przycisku.
+
+Przy tworzeniu następnych elementów zaczynają się trudności. Możliwe jest dynamiczne stworzenie działań matematycznych i umieszczenie ich na etykietach. Jednak niemożliwe jest stworzenie tych działań i przeniesienie ich na obrazek na płótnie. Aby obejść taki problem możliwe jest ręczne stworzenie wcześniej takich obrazków i załadowanie ich do pamięci telefonu. Aby uzyskać animację znowu pojawia się problem aby dynamicznie stworzyć nowy obrazek na nowy przykład matematyczny i usunąć ten rozwiązany. Rozwiązanie tego problemu to korzystanie tylko z 3-4 przykładów dostępnych na ekranie. Rozwiązanemu przykładowi ustawiamy widoczność na fałsz i przesuwamy do na górę ekranu, podczas gdy reszta elementów przesuwa się standardowo na dół.
+
+Na ekranie są zamieszczone 2 liczniki pokazujące liczbę poprawnych i niepoprawnych kliknięć. Wydawać by się mogło, że są one proste do zaimplementowania. Otóż okazuje się że w App Inventorze bardzo trudno zrobić taki licznik, ponieważ ten licznik jest obrazkiem. Przy ładowaniu ekranu musimy wczytać wszystkie 10 cyfr i po kliknięciu taki nimi manipulować, aby stworzyć odpowiednią liczbę.
+
+Podsumowując największym problemem jest dynamiczne ustawianie tekstu na obrazku. Niestety nie jest to możliwe w App Inventorze. Okazuje się jednak, że prawie każdy problem można w mniej lub bardziej pracochłonny sposób rozwiązać. Wniosek jaki można tutaj postawić to, że jeżeli będziemy chcieli tworzyć grę, posiadającą wiele animacji, to lepiej się zastanowić, czy nie skupić się na nauce programowania w Javie i poznaniu bibliotek wspomagających rysowanie grafiki dwuwymiarowej.
+
+
 
 
 
@@ -225,7 +235,7 @@ Kolejną zaletą jest łatwość stworzenia dobrze wyglądającego interfejsu gr
 
 Następną zaletą są możliwości jakie daje programowanie wizualne. Mimo, że wiele funkcji nie jest dostępnych to aplikacje, które można stworzyć za pomocą App Inventora mogą być bardzo rozbudowane. Komponenty oferowane przez to środowisko pokrywają zdecydowaną większość podstawowych i najbardziej używanych elementów, których się używa podczas pisania aplikacji w języku Java. Jeżeli jakiegoś komponentu brakuje, np. przycisków typu Radio, w internecie jest wiele materiałów w jaki sposób można to obejść.
 
-Myślenie wizualne jest bardziej naturalne dla człowieka. Programowanie w App Inventorze daje programistom możliwość pisania programów poprzez manipulację elementami graficznymi. Dopiero doświadczony programista będzie potrafił sobie wyobrazić na wyższym poziomie abstrakcji kod tekstowy. Dlatego też kod aplikacji Javowej musi spełniać założenia wzorców projektowych, dzięki czemu łatwość nawigowania pomiędzy klasami i medotami jest dużo większa. W App Inventorze stworzenie zadanej funkcjonalności sprowadza się zwykle do użycia pojedynczych bloków, co daje dużą przejrzystość. Dopiero skomplikowane aplkiacje mogłyby rozrosnąć się, tak że zrozumienie ich zajełoby dużo więcej czasu niż takiej samej aplikacji napisanej w języku Java. Jednak jeżeli jest to tak skompilkowana aplikacja warto się zastanowić czy napisanie jej w App Inventorze to dobry pomysł.
+Myślenie wizualne jest bardziej naturalne dla człowieka. Programowanie w App Inventorze daje programistom możliwość pisania programów poprzez manipulację elementami graficznymi. Dopiero doświadczony programista będzie potrafił sobie wyobrazić na wyższym poziomie abstrakcji kod tekstowy. Dlatego też kod aplikacji Javowej musi spełniać założenia wzorców projektowych, dzięki czemu łatwość nawigowania pomiędzy klasami i metodami jest dużo większa. W App Inventorze stworzenie zadanej funkcjonalności sprowadza się zwykle do użycia pojedynczych bloków, co daje dużą przejrzystość. Dopiero skomplikowane aplkiacje mogłyby rozrosnąć się, tak że zrozumienie ich zajełoby dużo więcej czasu niż takiej samej aplikacji napisanej w języku Java. Jednak jeżeli jest to tak skompilkowana aplikacja warto się zastanowić czy napisanie jej w App Inventorze to dobry pomysł.
 
 App Inventor może to być również dobrym narzędziem do tworzenia prototypów. Aplikacje tworzone za pomocą niego powstają bardzo szybko. Stworzony układ graficzny można w krótkim czasie zaprezentować biznesowi, który dzięki temu będzie miał szansę szybko zareagować i skorygować lub zatwierdzić dany interfejs.
 
@@ -233,6 +243,6 @@ App Inventor może to być również dobrym narzędziem do tworzenia prototypów
 
 Przynajmniej na razie nie ma możliwości rozszerzenia App Inventora, więc jeżeli istniałaby potrzeba stworzenia lub skorzystania z czegoś, co nie jest wbudowane bezpośrednio w oferowaną platformę, jak np. grafika 3D, to ostatecznie okaże się że projekt nie zostanie zrealizowany.
 
-Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności. Cały framework App Inventora zużywa o wiele więcej mocy procesora, niż programy napisane w języku Java. Przy zwykłym sortowaniu program napisany w Javie jest średio 2 tyś. razy szybszy.
+Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności. Cały framework App Inventora zużywa o wiele więcej mocy procesora, niż programy napisane w języku Java. Przy zwykłym sortowaniu program napisany w Javie jest średnio 2 tyś. razy szybszy.
 
 Stworzenie większego projektu i decyzja o użyciu App Inventora pociąga za sobą zaangażowanie wielu programistów. Nie mogą oni jednak pracować współbieżnie. Współdzielenie projektu odbywa się na zasadzie wyeksportowania go na komputer jako spakowane archiwum. Następnie kolejny programista może go zaimportować. Nie ma to jednak większego sensu, ponieważ kiedy 2 osoby będą pracować nad tym samym projektem, nie będzie można go na końcu scalić. Odwrotnie jest przy pisaniu aplikacji w języku natywnym. Istnieje bardzo wiele narzędzi do rozwiązania tego problemu, są to tzw. systemy zarządzania wersją kodu (\english{Source code management systems}).
