@@ -4,15 +4,15 @@
 \section{Wstęp}
 \label{c31}
 
-W danym rozdziale zostanie zawarty opis architektury oraz główne komponenty wykorzystywane przez App Inventora. Pomoże to zrozumieć zalety oraz wady powyższego narzędzia.
+W niniejszym rozdziale zawarto opis architektury oraz główne komponenty wykorzystywane przez App Inventora. Pomoże to zrozumieć zalety oraz wady powyższego narzędzia.
 
 \section{Architektura}
 \label{c32}
 
-Każda aplikacja ma swoją wewnętrzną strukturę, którą trzeba dokładnie zrozumieć, aby tworzyć efektywne oprogramowanie. Architektura aplikacji składa się głównie z 2 części: komponenty oraz ich zachowanie. Można z pewnym dystansem przyjąć że za komponenty odpowiada widok Designera, a za zachowanie komponentów widok edytora.
+Każda aplikacja ma swoją wewnętrzną strukturę, którą trzeba dokładnie zrozumieć, aby tworzyć efektywne oprogramowanie. Architektura aplikacji składa się głównie z 2 części: komponenty oraz ich zachowanie. Można z pewnym dystansem przyjąć, że za komponenty odpowiada widok Designera, a za zachowanie komponentów widok edytora.
 
 \begin{figure}[th] 
-\centering\includegraphics[width=10cm]{figures/architektura}
+\centering\includegraphics[width=12cm]{figures/architektura}
 \caption{Architektura aplikacji stworzonej przez App Inventora\cite{appinventor:architektura}}
 \end{figure}
 
@@ -21,7 +21,7 @@ Każda aplikacja ma swoją wewnętrzną strukturę, którą trzeba dokładnie zr
 
 Komponenty można podzielić na 2 rodzaje: widoczne oraz niewidoczne. 
 \begin{itemize}
-\item Widoczne są to takie, które użytkownik widzi gołym okiem np. przyciski, etykiety, pola tekstowe. Definiują one interfejs użytkownika.
+\item Widoczne użytkownik widzi gołym okiem. Należą do nich przyciski, etykiety, pola tekstowe. Definiują one interfejs użytkownika.
 \item Niewidocznych komponentów, jak sama nazwa wskazuje, użytkownik nie widzi. Nie są one częścią interfejsu. Dostarczają one dostępu do wbudowanych funkcjonalności telefonu. Są to różne sensory np. akcelerometr, moduł gps, komponent zamiany tekstu na mowę itp.
 \end{itemize}
 
@@ -40,7 +40,7 @@ W dzisiejszych czasach większość aplikacji nie wpasowuje się w powyższy sch
 \caption{Aplikacja reagująca na zdarzenia zewnętrzne i wewnętrzne\cite{appinventor:architektura}}
 \end{figure}
 
-Jednym z powodów dlaczego App Inventor jest tak intuicyjny jest zastosowanie prostej koncepcji nazywania zdarzeń. Zdefiniowanie zdarzenia polega na przeciągnięciu go z palety na główny ekran, a następnie napisanie konkretnego zachowania. Przykładem takiego zdarzenia jest obsługa akcelerometru. Po zatrzęsieniu telefonem, pojawia się tekst "Shaking!".
+Jednym z powodów dlaczego App Inventor jest tak intuicyjny jest zastosowanie prostej koncepcji nazywania zdarzeń. Zdefiniowanie zdarzenia polega na przeciągnięciu go z palety na główny ekran, a następnie napisanie konkretnego zachowania. Przykładem takiego zdarzenia jest obsługa akcelerometru. Po zatrzęsieniu telefonem, pojawia się tekst \emph{Shaking!}.
 
 \begin{figure}[th] 
 \centering\includegraphics[width=10cm]{figures/shakingEvent}
@@ -56,9 +56,10 @@ Zdarzenia można podzielić w zależności od jego typu:
 \item Zewnętrzne - są uruchamiane gdy urządzenie odbierze jakiś sygnał zewnętrzny typu, odczyt pozycji urządzenia z satelity, reakcja na przychodzący sms.
 \end{itemize}
 
-Programowanie aplikacji odbywa się poprzez zdefiniowanie interfejsu, a następnie napisanie zachowania danej aplikacji, dla różnych zdarzeń, które mogą wystąpić. Inaczej mówiąc, tworzymy najpierw komponenty w Designerze i ustawiamy im właściwości. Kiedy otrzymaliśmy interesujący nas wygląd zabieramy się za opisanie zdarzeń.
+Programowanie aplikacji odbywa się poprzez zdefiniowanie interfejsu, a następnie napisanie zachowania danej aplikacji, dla różnych zdarzeń, które mogą wystąpić. Inaczej mówiąc, komponenty tworzone są najpierw w Designerze i tam przypisywane są do nich właściwości. Programista po otrzymaniu interesującego go wyglądu może przystąpić do opisu zdarzeń.
 
 \section{Debugowanie aplikacji}
 \label{c33}
 
-Najłatwiejszy sposób instalacji i testowania aplikacji odbywa się przez wifi. Musimy pobrać dodatkową aplikację na urządzenie z systemem android. Następnie na stronie app inventora uruchamiamy opcję połączenia z telefonem i pojawia nam się na monitorze kod QR, który skanujemy telefonem, z pomocą ściągniętej aplikacji. Po tych czynnościach aplikacja zostaje automatycznie zainstalowana na telefonie. Aplikacja dodatkowo automatycznie uaktualnia wprowadzone zmiany, nie trzeba jej uruchamiać ponownie. Jest to rekomendowany sposób, jednak istnieją jeszcze 2 dodatkowe. Jeżeli nie posiadamy urządzenia z systemem Android możemy użyć emulatora. Trzecia opcja to możemy połączyć telefon z komputerem i aplikacją przez kabel USB.
+Najłatwiejszy sposób instalacji i testowania aplikacji odbywa się przez wifi. Musimy pobrać dodatkową aplikację na urządzenie z systemem Android. Następnie na stronie App Inventora uruchamiamy opcję połączenia z telefonem i pojawia nam się na monitorze kod QR, który skanujemy telefonem, z pomocą ściągniętej aplikacji.Po wykonaniu powyższych czynności następuje automatyczna instalacja aplikacji na telefonie. Dzięki aplikacji następuje również automatyczne uaktualnienie wprowadzonych zmian, nie zachodzi konieczność jej ponownego uruchamiania. 
+Powyżej opisany sposób debugowania aplikacji jest rekomendowany, ale należy wspomnieć o istnieniu dwóch innych możliwości. Jedna z nich odnosi się do przypadku, gdy nie posiadamy urządzenia z systemem Android. Możemy wówczas użyć emulatora. Trzecia opcja to możliwość połączenia telefonu z komputerem i aplikacją przez kabel USB. 

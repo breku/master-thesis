@@ -39,43 +39,43 @@ Sortowanie napisanie w Javie jest zrozumiałe dla każdego programisty. Do sorto
     }
 \end{lstlisting}
 
-W algorytmach bardzo ważna jest wydajność. Oba algorytmy działają w ten sam sposób, jednak wydajność sortowania listy napisanej w Javie jest zdecydowanie wyższa. Można to zaobserwować na poniższym wykresie. Przesortowanie bardzo małej liczby elementów zajmuje App Inventorowi bardzo dużo czasu. Przy 25 elementach czas sortowania przekroczył 1 sekundę. Jest to bardzo słaby wynik w porównaniu do sortowania napisanego w Javie. Średnio czas sortowania był 2 tysiące razy mniejszy! Na danym wykresie została zastosowana skala logarytmiczna, aby zobaczyć różnicę.
+W algorytmach bardzo ważna jest wydajność. Oba algorytmy działają w ten sam sposób, jednak wydajność sortowania listy napisanej w Javie jest zdecydowanie wyższa. Można to zaobserwować na poniższym wykresie. Przesortowanie bardzo małej liczby elementów zajmuje App Inventorowi bardzo dużo czasu. Przy 25 elementach czas sortowania przekroczył 1 sekundę. Jest to bardzo słaby wynik w porównaniu do sortowania napisanego w Javie. Średnio czas sortowania był 2 tysiące razy mniejszy! Na poniższym uwidaczniającym różnicę wykresie zastosowano skalę logarytmiczną, aby zobaczyć różnicę.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=10cm]{figures/apps/sortChart}
 \caption{Wykres przedstawiający czas sortowania}
 \end{figure}
 
-Napisanie tej aplikacji w Javie nie było żadnym problemem. Bardzo łatwo było zdebugować kod i sprawdzić jego poprawność. Stworzenie tej samej aplikacji w App Inventorze nie było trywialne.
+Napisanie omawianej aplikacji w Javie nie było żadnym problemem. Bardzo łatwo było zdebugowano kod i sprawdzono jego poprawność. Stworzenie tej samej aplikacji w App Inventorze nie było trywialne.
 
 
 \subsection{Akcelerometr}
 
-Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akcelerometru, a następnie wyświetla je na ekran telefonu, z zadaną częstotliwością. Na poniższym wykresie przedstawione jest zużycie procesora dla różnych wartości próbkowania. Można zauważyć, że zużycie procesora dla aplikacji napisanej w Javie jest prawie stałe. Dzieje się tak dlatego że ustawianie częstotliwości próbkowania jest to tylko wskazówką dla systemu. Zdarzenia mogą być odbierane szybciej lub wolniej niż zadana częstotliwość. Zazwyczaj są odbierane szybciej. W tym przypadku są odbierane szybciej i zmiana częstotliwości na mniejszą, tak naprawdę nic tutaj nie zmienia, ponieważ zdarzenia dalej będą odbierane szybciej. Zużycie procesora prawdopodobnie będzie dalej stałe, gdy będziemy zmniejszać częstotliwość.\cite{doc:android}
+Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akcelerometru, a następnie wyświetla je na ekran telefonu, z zadaną częstotliwością. Na poniższym wykresie przedstawione jest zużycie procesora dla różnych wartości próbkowania. Można zauważyć, że zużycie procesora dla aplikacji napisanej w Javie jest prawie stałe. Dzieje się tak dlatego, że ustawianie częstotliwości próbkowania jest tylko wskazówką dla systemu. Zdarzenia mogą być odbierane szybciej lub wolniej niż zadana częstotliwość. Zazwyczaj są odbierane szybciej. W tym przypadku są odbierane szybciej i zmiana częstotliwości na mniejszą, tak naprawdę nic tutaj nie zmienia, ponieważ zdarzenia dalej będą odbierane szybciej. Zużycie procesora prawdopodobnie będzie dalej stałe, gdy będziemy zmniejszać częstotliwość.\cite{doc:android}
 
 \begin{figure}[H]
 \centering\includegraphics[width=10cm]{figures/apps/accelerometerChart}
 \caption{Wykres przedstawiający zużycie procesora}
 \end{figure}
 
-W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości próbkowania. Aby to obejść, trzeba dodać nowy komponent Clock, który ma możliwość uruchamiania, co zadany czas. Można podejżewać, że wydajność akcelerometru jest niezmienna i częstotliwość próbkowania jest stała. Wyraźny spadek wydajności jest przez to, że musimy wywoływać metody w bardzo krótkich odstępach czasu i to, że one dodatkowo odczytują wartość sensora, nie wpływa znacząco na zużycie procesora.
+W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości próbkowania. Aby to obejść, trzeba dodać nowy komponent Clock, który ma możliwość uruchamiania, co zadany czas. Można podejrzewać, że wydajność akcelerometru jest niezmienna i częstotliwość próbkowania jest stała. Wyraźny spadek wydajności jest przez to, że musimy wywoływać metody w bardzo krótkich odstępach czasu i to, że one dodatkowo odczytują wartość sensora, nie wpływa znacząco na zużycie procesora.
 
 
 \subsection{Fibonacci}
 
-Następną stworzoną aplikacją jest aplikacja wyliczająca kolejny element ciągu Fibonnaciego. Testuje ona wydajność App Inventora. Złożoność takiego algorytmu to $O(2^n)$, czyli czas wykonywania będzie rósł bardzo szybko. Dodatkowo, kod jest napisany tak, aby metody wykonywały się rekurencyjnie, jednak aplikacja nie jest w stanie przetestować wielkości stosu. Dla bardzo małych liczb czas wykonywania się algorytmu jest bardzo wysoki.
+Następną stworzoną aplikacją jest aplikacja wyliczająca kolejny element ciągu Fibonnaciego. Testuje ona wydajność App Inventora. Złożoność takiego algorytmu to $O(2^n)$, czyli czas wykonywania będzie rósł bardzo szybko. Dodatkowo, kod jest napisany w taki sposób, aby metody wykonywały się rekurencyjnie, jednak aplikacja nie jest w stanie przetestować wielkości stosu. Dla bardzo małych liczb czas wykonywania się algorytmu jest bardzo wysoki.
 
 \begin{figure}[H]
 \centering\includegraphics[width=10cm]{figures/apps/fibonacciChart}
 \caption{Wykres przedstawiający czas obliczenia n-tego elementu z ciągu Fibonacciego}
 \end{figure}
 
-Osiągnięty rezultat wydajności nie jest zaskakujący po otrzymaniu wyników z poprzednich programów. Czas obliczenia już początkowych elementów ciągu Fibonnaciego jest bardzo duży. Przy liczeniu 20 elementu aplikacja napisana w App Inventorze potrzebuje ponad pół minuty, podczas gdy, aplikacja napisana w Javie potrzebuje na to około jedną setną sekundy.
+Osiągnięty rezultat wydajności nie jest zaskakujący po otrzymaniu wyników z poprzednich programów. Czas obliczenia już początkowych elementów ciągu Fibonnaciego jest bardzo duży. Przy liczeniu dwudziestego elementu aplikacja napisana w App Inventorze potrzebuje ponad pół minuty, podczas gdy, aplikacja napisana w Javie potrzebuje na to około jedną setną sekundy.
 
 
 \subsection{Silnia}
 
-Następny program oblicza silnię danego elementu. Istnieje możliwość wyboru, iteracyjna lub rekursyjna wersja. Aby zaprezentować oba podejścia na jednym wykresie, została użyta skala logarytmiczna.
+Następny program oblicza silnię danego elementu. Istnieje możliwość wyboru, iteracyjna lub rekursyjna wersja. Aby zaprezentować oba podejścia na jednym wykresie, zastosowano skalę logarytmiczną.
 
 \begin{figure}[H]
 \centering\includegraphics[width=10cm]{figures/apps/factorialChart}
@@ -95,7 +95,7 @@ Można się jedynie domyślać, że jest to błąd przepełnienia stosu lub prze
 
 \subsection{Database}
 
-Aplikacja stworzona aby sprawdzić szybkość działania bazy danych oferowanej przez App Inventora. Został tutaj wykorzystany komponent TinyDB. Odpowiada on klasie Javy SharedPreferences, czyli jest to baza danych typu klucz/wartość. Aby odczytać dane z pamięci trzeba znać klucz do tych danych. Jest to bardzo łatwe w przypadku małych ilości danych, jednak trudno jest przechowywać większy struktury, ze względu na potrzebę znania klucza dla każdego wiersza. Duże ilości danych powinny być przechowywane w bazie danych SQLite, ponieważ organizacja danych i zarządzanie nimi jest wydajniejsze. Aby otrzymać część danych z bazy, trzeba posłużyć się językiem zapytań SQL. Daje to możliwość wyszukiwania interesujących nas danych. Z drugiej strony zarządzanie i przeszukiwanie dużych zbiorów danych wpływa na wydajność, więc czytanie danych z bazy danych może być wolniejsze niż czytanie danych z SharedPreferences.
+Aplikację stworzono celem kontroli szybkości działania bazy danych oferowanej przez App Inventora. Został tutaj wykorzystany komponent TinyDB. Odpowiada on klasie Javy SharedPreferences, czyli jest to baza danych typu klucz/wartość. Aby odczytać dane z pamięci trzeba znać klucz do tych danych. Jest to bardzo łatwe w przypadku małych ilości danych, jednak trudno jest przechowywać większy struktury, ze względu na potrzebę znania klucza dla każdego wiersza. Duże ilości danych powinny być przechowywane w bazie danych SQLite, ponieważ organizacja danych i zarządzanie nimi jest wydajniejsze. Aby otrzymać część danych z bazy, trzeba posłużyć się językiem zapytań SQL. Daje to możliwość wyszukiwania interesujących nas danych. Z drugiej strony zarządzanie i przeszukiwanie dużych zbiorów danych wpływa na wydajność, więc czytanie danych z bazy danych może być wolniejsze niż czytanie danych z SharedPreferences.
 
 \begin{figure}[H]
 \centering\includegraphics[width=10cm]{figures/apps/databaseChart}
@@ -107,7 +107,7 @@ Na powyższym wykresie można zauważyć przewagę wydajności aplikacji napisan
 
 \subsection{Animacja}
 
-Aplikacja testuje możliwości animacyjne App Inventora. Wiadomo że komponenty potrzebne są dostępne, jednak nie wiadomo, czy wydajność pozwoli na płynną animację. Mimo że tworzenie animacji może wydawać się trudne, za pomocą App Inventora stworzenie animacji odbywa się tylko w kilku krokach. Największym problemem było znalezienie odpowiednich klatek, gdzie ostatnia wygląda tak samo jak pierwsza, aby była możliwość zapętlenia.
+Aplikacja testuje możliwości animacyjne App Inventora. Wiadomo, że komponenty potrzebne są dostępne, jednak nie wiadomo, czy wydajność pozwoli na płynną animację. Mimo że tworzenie animacji może wydawać się trudne, za pomocą App Inventora stworzenie animacji odbywa się tylko w kilku krokach. Największym problemem było znalezienie odpowiednich klatek, gdzie ostatnia wygląda tak samo jak pierwsza, aby uzyskać możliwość zapętlenia.
 
 
 \begin{figure}[H]
@@ -115,12 +115,12 @@ Aplikacja testuje możliwości animacyjne App Inventora. Wiadomo że komponenty 
 \caption{Bloki potrzebne do stworzenia aplikacji}
 \end{figure}
 
-Na głównym ekranie aplikacji stworzone jest płótno oraz jeden obrazek, który podmieniamy co zadany interwał czasu. Ostatecznym rezulatatem jest płynna animacja. Dopiero przy bardzo niskim interwale czasowym (szybkiej zmianie klatek), można być odczyć przycinanie się ekranu.
+Na głównym ekranie aplikacji stworzone jest płótno oraz jeden obrazek, który podmieniamy co zadany interwał czasu. Ostatecznym rezulatatem jest płynna animacja. Dopiero przy bardzo niskim interwale czasowym (szybkiej zmianie klatek), można było odczuć przycinanie się ekranu.
 
 
 \subsection{Kolizja elementów}
 
-Aplikacja sprawdzająca możliwość detekcji kolizji poruszających się elementów. Na płótnie zostało umieszczone kilka elementów. Elementy w kolorze czarnym poruszają się po płótnie i kiedy dotrą do ściany odbijają się od niej. Element o kolorze niebieskim jest sterowanym za pomocą akcelerometru. Pochylając telefon przesuwamy element po płaszczyźnie.
+Aplikacja sprawdzająca możliwość detekcji kolizji poruszających się elementów. Na płótnie umieszczono kilka elementów. Elementy w kolorze czarnym poruszają się po płótnie i kiedy dotrą do ściany odbijają się od niej. Element o kolorze niebieskim jest sterowanym za pomocą akcelerometru. Pochylając telefon przesuwamy element po płaszczyźnie.
 
 \begin{figure}[H]
 \centering\includegraphics[width=5cm]{figures/apps/ai_collision}
@@ -137,7 +137,7 @@ Aplikacja działa płynnie, dla takiej ilości elementów. Wadą, którą można
 
 \subsection{Activity Starter}
 
-Aplikacja daje możliwość wystartowania nowego Activity, w App Inventor istnieje sposobność stworzenia jednej aplikacji, która będzie uruchamiała pozostałe. Odpowiedzialny za to jest komponent ActivityStarter. Wystarczy ustawić mu 2 właściwości, nazwę pakietu oraz klasy. Jeżeli w dokumentacji aplikacji nie jest napisane jakie są powyższe nazwy, warto uruchomić aplikację z podłączonym urządzeniem do komputera, aby widzieć logi. Trzeba znaleźć wtedy linijkę podobną do poniższej
+Aplikacja daje możliwość wystartowania nowego Activity, w App Inventor istnieje sposobność stworzenia jednej aplikacji, która będzie uruchamiała pozostałe. Odpowiedzialny za to jest komponent ActivityStarter. Wystarczy ustawić mu dwie właściwości, nazwę pakietu oraz klasy. Jeżeli w dokumentacji aplikacji nie napisano jakie są powyższe nazwy, warto uruchomić aplikację z podłączonym urządzeniem do komputera, aby widzieć logi. Należy wówczas znaleźć wtedy linijkę podobną do poniższej
 
 \begin{lstlisting}
 I/ActivityManager:
@@ -145,28 +145,28 @@ START {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER]
 flg=0x10200000 cmp=org.mozilla.firefox/.App u=0} from pid 726
 \end{lstlisting}
 
-Jeżeli pojawi się fragmet z parametrem cmp, to nazwą pakietu jest tekst przez ukośnikiem, a nazwą klasy jest cały tekst bez ukośnika. Zatem komponent ActivityStarter daje możliwość uruchomienia prawie każdej aplikacji. Aplikacja nie musi być stworzona w App Inventorze, może to być dowolna aplikacja zainstalowana na urządzeniu. Istnieje również możliwość przekazania dodatkowych parametrów, przy uruchamianiu zewnętrznej aplikacji. Niektóre z nich są nawet zaprojektowane w ten sposób, aby przyjmować dodatkowe parametry podczas uruchamiania. Przykładem są tutaj aplikacja map, która przyjmie jako paramter wartości geograficzne. Innym przykładem jest wyszukiwarka internetowa, która przyjmie jako parametr tekst do wyszukania lub adres do wyświetlenia.
+Jeżeli pojawi się fragmet z parametrem cmp, to nazwą pakietu jest tekst przed ukośnikiem, a nazwą klasy jest cały tekst bez ukośnika. Zatem komponent ActivityStarter daje możliwość uruchomienia prawie każdej aplikacji. Aplikacja nie musi być stworzona w App Inventorze, może to być dowolna aplikacja zainstalowana na urządzeniu. Istnieje również możliwość przekazania dodatkowych parametrów, przy uruchamianiu zewnętrznej aplikacji. Niektóre z nich są nawet zaprojektowane w ten sposób, aby przyjmować dodatkowe parametry podczas uruchamiania. Przykładem są tutaj aplikacja map, która przyjmie jako paramter wartości geograficzne. Innym przykładem jest wyszukiwarka internetowa, która przyjmie jako parametr tekst do wyszukania lub adres do wyświetlenia.
 
 \begin{lstlisting}
 Action: android.intent.action.VIEW
 DataUri: http://google.pl
 \end{lstlisting}
 
-Ustawiając powyższe parametry, uruchomi się przeglądarka internetowa na stronie http://google.pl. Druga możliwość jaką daje ActivityStarter to odbieranie parametrów. W App Inventorze istnieje tylko przekazywanie wartości tekstowych. Aby zwrócić taki parametr trzeba użyć bloku zamykającego aplikację z właściwością do ustawienia (\english{Close Application With Plain Text}).
+Ustawiając powyższe parametry, uruchomi się przeglądarka internetowa na stronie http://google.pl. Druga możliwość, jaką daje ActivityStarter, to odbieranie parametrów. W App Inventorze istnieje tylko przekazywanie wartości tekstowych. Aby zwrócić taki parametr trzeba użyć bloku zamykającego aplikację z właściwością do ustawienia (\english{Close Application With Plain Text}).
 
 \subsection{Multiple Screens}
 
-Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ogarniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany paramter otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją odrazu odczytać.
+Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ogarniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany parametr otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją od razu odczytać.
 
 \subsection{Think Faster}
 
-App Inventor oferuje bardzo wiele elementów i rozwiązań. Aby sprawdzić jak mają się one w praktyce podjęto próbę skopiowania gry napisanej wcześniej w języku Java. Jest to gra o nazwie \emph{Think Faster}. Znajduje się ona w markecie Google Play pod poniższym adresem internetowym:
+App Inventor oferuje bardzo wiele elementów i rozwiązań. Celem sprawdzenia, jak zachowują się one w praktyce podjęto próbę skopiowania gry napisanej wcześniej w języku Java. Jest to gra o nazwie \emph{Think Faster}. Znajduje się ona w markecie Google Play pod poniższym adresem internetowym:
 
 \begin{lstlisting}
 https://play.google.com/store/apps/details?id=com.thinkfaster
 \end{lstlisting} 
 
-Gra polega na rozwiązywaniu działań matematycznych, które mają różny stopień trudności. 
+Gra polega na rozwiązywaniu działań matematycznych o różnym stopniu trudności. 
 
 \begin{figure}[H]
 \centering\includegraphics[width=10cm]{figures/apps/thinkfaster_newgame}
@@ -191,7 +191,7 @@ android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
 \end{lstlisting}
 Aplikację następnie trzeba zbudować i podpisać cyfrowo, aby zainstalować ją na urządzeniu.
 
-Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełącznia ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów i funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodatkowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
+Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełącznia ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów, a funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodatkowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
 
 Ekran menu w oryginalnej aplikacji wygląda następująco:
 
@@ -200,7 +200,7 @@ Ekran menu w oryginalnej aplikacji wygląda następująco:
 \caption{Ekran menu gry}
 \end{figure}
 
-Nie jest on skomplikowany. Dlatego też całkowicie udało się go odtworzyć w App Inventorze. Wykorzystano komponent Canvas, a poszczególne przyciski były obrazkami z danym napisem. Zaczynając od dołu ekranu, przycisk wyjście udało się obsłużyć i wyjść z aplikacji. Dodatkowo istnieje zdarzenie naciśnięcia klawisza systemowego wstecz, który można obsłużyć we własny sposób. Ekran pomocy również udało się całkowicie odtworzyć. Zawiera on jedynie komponent Canvas rozciągnięty na cały ekran, na którym znajduje się obrazek.
+Ekran nie jest skomplikowany. Dlatego też całkowicie udało się go odtworzyć w App Inventorze. Wykorzystano komponent Canvas, a poszczególne przyciski były obrazkami z danym napisem. Zaczynając od dołu ekranu, przycisk wyjście udało się obsłużyć i wyjść z aplikacji. Dodatkowo istnieje zdarzenie naciśnięcia klawisza systemowego wstecz, który można obsłużyć we własny sposób. Powiodła się również próba całkowitego odtworzenia ekranu pomocy. Zawiera on jedynie komponent Canvas rozciągnięty na cały ekran, na którym znajduje się obrazek.
 
 Wybierając nową grę użytkownik przechodzi do wyboru ekranu z typem gry. Zaprezentowany ekran widać poniżej:
 
@@ -209,17 +209,17 @@ Wybierając nową grę użytkownik przechodzi do wyboru ekranu z typem gry. Zapr
 \caption{Ekran wyboru rodzaju gry}
 \end{figure}
 
-Na tym ekranie użytkownik wybiera poziom trudniości oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. Poniżej jest wytłumaczone dlaczego.
+Na tym ekranie użytkownik wybiera poziom trudniości oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. Poniżej nastąpi uzasadnienie tego stwierdzenia.
 
 Uruchamiając nową grę wiele rzeczy na początku musi zostać stworzone. Pierwszym z elementów jest pasek z uciekającym czasem. Został stworzony jako prostokątny obrazek przesuwający się w lewo. Jedynym problemem było, kiedy nastąpiła kolizja ze krawędzią ekranu. W App Inventorze nie ma możliwości wyłączenia jej. Obejście tego problemu to zmniejszanie rozmiaru obrazka z taką samą prędkością jaką poruszał się on na początku.
 
 Kolejnym elementem są przyciski, mówiące przy działanie matematyczne jest poprawne lub niepoprawne. Przy tworzeniu ich nie pojawiły się żadne problemy. Są to zwykłe obrazki nałożone na płótnie. Posiadają one zdarzenie \emph{TouchUp}, które jest wywoływane w momencie podniesienia palca z przycisku.
 
-Przy tworzeniu następnych elementów zaczynają się trudności. Możliwe jest dynamiczne stworzenie działań matematycznych i umieszczenie ich na etykietach. Jednak niemożliwe jest stworzenie tych działań i przeniesienie ich na obrazek na płótnie. Aby obejść taki problem możliwe jest ręczne stworzenie wcześniej takich obrazków i załadowanie ich do pamięci telefonu. Aby uzyskać animację znowu pojawia się problem aby dynamicznie stworzyć nowy obrazek na nowy przykład matematyczny i usunąć ten rozwiązany. Rozwiązanie tego problemu to korzystanie tylko z 3-4 przykładów dostępnych na ekranie. Rozwiązanemu przykładowi ustawiamy widoczność na fałsz i przesuwamy do na górę ekranu, podczas gdy reszta elementów przesuwa się standardowo na dół.
+Przy tworzeniu następnych elementów zaczynają się trudności. Możliwe jest dynamiczne stworzenie działań matematycznych i umieszczenie ich na etykietach. Jednak niemożliwe jest stworzenie tych działań i przeniesienie ich na obrazek na płótnie. W celu obejścia takiego problemu można wykorzystać możliwość wcześniejszego, ręcznego stworzenia wymaganych obrazków i załadowanie ich do pamięci telefonu. Aby uzyskać animację znowu pojawia się problem aby dynamicznie stworzyć nowy obrazek na nowy przykład matematyczny i usunąć ten rozwiązany. Rozwiązanie tego problemu to korzystanie tylko z 3-4 przykładów dostępnych na ekranie. Rozwiązanemu przykładowi ustawiamy widoczność na fałsz i przesuwamy do na górę ekranu, podczas gdy reszta elementów przesuwa się standardowo na dół.
 
 Na ekranie są zamieszczone 2 liczniki pokazujące liczbę poprawnych i niepoprawnych kliknięć. Wydawać by się mogło, że są one proste do zaimplementowania. Otóż okazuje się że w App Inventorze bardzo trudno zrobić taki licznik, ponieważ ten licznik jest obrazkiem. Przy ładowaniu ekranu musimy wczytać wszystkie 10 cyfr i po kliknięciu taki nimi manipulować, aby stworzyć odpowiednią liczbę.
 
-Podsumowując największym problemem jest dynamiczne ustawianie tekstu na obrazku. Niestety nie jest to możliwe w App Inventorze. Okazuje się jednak, że prawie każdy problem można w mniej lub bardziej pracochłonny sposób rozwiązać. Wniosek jaki można tutaj postawić to, że jeżeli będziemy chcieli tworzyć grę, posiadającą wiele animacji, to lepiej się zastanowić, czy nie skupić się na nauce programowania w Javie i poznaniu bibliotek wspomagających rysowanie grafiki dwuwymiarowej.
+Podsumowując powyższe obserwacje należy stwierdzić, że największy problem stanowi dynamiczne ustawianie tekstu na obrazku. Niestety nie jest to możliwe w App Inventorze. Okazuje się jednak, że prawie każdy problem można w mniej lub bardziej pracochłonny sposób rozwiązać. Wniosek jaki można tutaj postawić to, że jeżeli będziemy chcieli tworzyć grę, posiadającą wiele animacji, to lepiej się zastanowić, czy nie skupić się na nauce programowania w Javie i poznaniu bibliotek wspomagających rysowanie grafiki dwuwymiarowej.
 
 
 
@@ -231,18 +231,18 @@ Podsumowując największym problemem jest dynamiczne ustawianie tekstu na obrazk
 
 Główną zaletą programowania wizualnego jest łatwość, z jaką przychodzi pisać aplikacje. Nie trzeba być doświadczonym programistą, aby tworzyć aplikacje za pomocą App Inventora. Jeżeli ktoś jest zainteresowany programowaniem i nie wie jak zacząć, programowanie wizualne może okazać się dobrym wyborem na start. Nauka programowania wizualnego nie jest skomplikowana, wystarczą chęci. 
 
-Kolejną zaletą jest łatwość stworzenia dobrze wyglądającego interfejsu graficznego (\english{GUI}). Nie znać języku XML aby zdefiniować ładny układ i wygląd ekranu. Wszystkie elementy są przeciągane z palety komponentów, a ich właściwości ustawiane również w prosty sposób.
+Kolejną zaletą jest nieskomplikowany sposób stworzenia dobrze wyglądającego interfejsu graficznego (\english{GUI}). Nie znać języku XML aby zdefiniować ładny układ i wygląd ekranu. Wszystkie elementy są przeciągane z palety komponentów, a ich właściwości ustawiane również w prosty sposób.
 
 Następną zaletą są możliwości jakie daje programowanie wizualne. Mimo, że wiele funkcji nie jest dostępnych to aplikacje, które można stworzyć za pomocą App Inventora mogą być bardzo rozbudowane. Komponenty oferowane przez to środowisko pokrywają zdecydowaną większość podstawowych i najbardziej używanych elementów, których się używa podczas pisania aplikacji w języku Java. Jeżeli jakiegoś komponentu brakuje, np. przycisków typu Radio, w internecie jest wiele materiałów w jaki sposób można to obejść.
 
 Myślenie wizualne jest bardziej naturalne dla człowieka. Programowanie w App Inventorze daje programistom możliwość pisania programów poprzez manipulację elementami graficznymi. Dopiero doświadczony programista będzie potrafił sobie wyobrazić na wyższym poziomie abstrakcji kod tekstowy. Dlatego też kod aplikacji Javowej musi spełniać założenia wzorców projektowych, dzięki czemu łatwość nawigowania pomiędzy klasami i metodami jest dużo większa. W App Inventorze stworzenie zadanej funkcjonalności sprowadza się zwykle do użycia pojedynczych bloków, co daje dużą przejrzystość. Dopiero skomplikowane aplkiacje mogłyby rozrosnąć się, tak że zrozumienie ich zajełoby dużo więcej czasu niż takiej samej aplikacji napisanej w języku Java. Jednak jeżeli jest to tak skompilkowana aplikacja warto się zastanowić czy napisanie jej w App Inventorze to dobry pomysł.
 
-App Inventor może to być również dobrym narzędziem do tworzenia prototypów. Aplikacje tworzone za pomocą niego powstają bardzo szybko. Stworzony układ graficzny można w krótkim czasie zaprezentować biznesowi, który dzięki temu będzie miał szansę szybko zareagować i skorygować lub zatwierdzić dany interfejs.
+App Inventor może być również dobrym narzędziem do tworzenia prototypów. Aplikacje tworzone za pomocą niego powstają bardzo szybko. Stworzony układ graficzny można w krótkim czasie zaprezentować biznesowi, który dzięki temu będzie miał szansę szybko zareagować i skorygować lub zatwierdzić dany interfejs.
 
 \section{Wady programowania wizualnego}
 
 Przynajmniej na razie nie ma możliwości rozszerzenia App Inventora, więc jeżeli istniałaby potrzeba stworzenia lub skorzystania z czegoś, co nie jest wbudowane bezpośrednio w oferowaną platformę, jak np. grafika 3D, to ostatecznie okaże się że projekt nie zostanie zrealizowany.
 
-Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności. Cały framework App Inventora zużywa o wiele więcej mocy procesora, niż programy napisane w języku Java. Przy zwykłym sortowaniu program napisany w Javie jest średnio 2 tyś. razy szybszy.
+Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności. Cały framework App Inventora zużywa o wiele więcej mocy procesora, niż programy napisane w języku Java. Przy zwykłym sortowaniu program napisany w Javie jest średnio 2 tysiące razy szybszy.
 
-Stworzenie większego projektu i decyzja o użyciu App Inventora pociąga za sobą zaangażowanie wielu programistów. Nie mogą oni jednak pracować współbieżnie. Współdzielenie projektu odbywa się na zasadzie wyeksportowania go na komputer jako spakowane archiwum. Następnie kolejny programista może go zaimportować. Nie ma to jednak większego sensu, ponieważ kiedy 2 osoby będą pracować nad tym samym projektem, nie będzie można go na końcu scalić. Odwrotnie jest przy pisaniu aplikacji w języku natywnym. Istnieje bardzo wiele narzędzi do rozwiązania tego problemu, są to tzw. systemy zarządzania wersją kodu (\english{Source code management systems}).
+Stworzenie większego projektu i decyzja o użyciu App Inventora pociąga za sobą zaangażowanie wielu programistów. Nie mogą oni jednak pracować współbieżnie. Współdzielenie projektu odbywa się na zasadzie wyeksportowania go na komputer jako spakowane archiwum. Następnie kolejny programista może go zaimportować. Nie ma to jednak większego sensu, ponieważ kiedy dwie osoby będą pracować nad tym samym projektem, nie będzie można go na końcu scalić. Odwrotnie jest przy pisaniu aplikacji w języku natywnym. Istnieje bardzo wiele narzędzi do rozwiązania tego problemu, są to tzw. systemy zarządzania wersją kodu (\english{Source code management systems}).

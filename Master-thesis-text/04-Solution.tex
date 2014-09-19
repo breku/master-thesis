@@ -1,12 +1,12 @@
 \chapter{Zastosowane podejście}
 \label{c4}
 
-W danym rozdziale zawarto opis zastosowanego podejścia, do porównania programowania wizualnego i programowania natywnego.
+W niniejszym rozdziale zawarto opis zastosowanego podejścia, do porównania programowania wizualnego i programowania natywnego.
 
 \section{Wstęp}
 \label{c41}
 
-Zastosowane podejście polegało na stworzeniu jak największej ilości aplikacji, wykorzystujących różne komponenty. Następnie stworzenie takich samych aplikacji w języku Java. Mając dużą liczbę aplikacji pokrywającą prawie wszystkie możliwości App Inventora, będziemy mogli odpowiedzieć na wiele pytań jego dotyczących, które zostały postawione we wstępie pracy.(\ref{c12})
+Zastosowane podejście polegało na stworzeniu jak największej ilości aplikacji, wykorzystujących różne komponenty. Następnie należało wykreować analogiczne aplikacje w języku Java. Dysponując obszerną, pokrywającą niemal wszystkie możliwości App Inventora  liczbą aplikacji programista jest w stanie udzielić odpowiedzi na wiele pytań dotyczących tego narzędzia, postawionych we wstępie pracy. (\ref{c12})
 
 \section{Dalvik Debug Monitor}
 
@@ -23,9 +23,9 @@ Poniżej widać narzędzie Dalvik Debug Monitor. Na telefonie uruchomione są dw
 
 \section{Zużycie procesora i pamięci}
 
-Każda aplikacja powoduje zużycie procesora oraz zajmuje miejsce w pamięci. Do pomiaru tych wielkości został użyty Dalvik Debug Monitor.
+Każda aplikacja powoduje zużycie procesora oraz zajmuje miejsce w pamięci. Do pomiaru tych wielkości użyto Dalvik Debug Monitor.
 
-Aplikację napisaną w Javie możemy konfigurować dowolnie. Między innymi możemy umożliwić aby była debugowalna, ustawiając parameter:
+Aplikację napisaną w Javie możemy konfigurować dowolnie. Między innymi, ustawiając parametr, mamy możliwość debugowania: 
 
 \begin{lstlisting}
 android:debbugable="true"
@@ -43,7 +43,7 @@ Po wykonaniu powyższej komendy zostaje tworzony folder z taką samą nazwą jak
 apktool -b aplikacja
 \end{lstlisting}
 
-Aplikacja została skompilowana ponownie do pliku *.apk. Aby zainstalować ją na urządzeniu trzeba ją jeszcze cyfrowo podpisać. Generujemy klucz dla aplikacji:
+Aplikacja została skompilowana ponownie do pliku *.apk. Aby zainstalować ją na urządzeniu należy ją jeszcze cyfrowo podpisać. Generujemy klucz dla aplikacji:
 
 \begin{lstlisting}
 keytool -genkey -v -keystore keystore -alias alias_aplikacji -keyalg RSA 
