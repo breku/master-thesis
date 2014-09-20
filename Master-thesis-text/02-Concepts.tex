@@ -3,15 +3,6 @@
 
 W niniejszym rozdziale zostaną zawarte podstawowe pojęcia i mechanizmy używane przez aplikację App Inventor. Ideą jest tutaj przybliżenie ważnych terminów informatycznych.
 
-\section{App Inventor}
-\label{c21}
-
-W grudniu 2013 została wydana druga wersja systemu App Inventor. Starszą wersję określono jako Classic. Oba narzędzia są do siebie bardzo podobne, jednak projektów stworzonych w pierwszej wersji systemu nie można zaimportować do wersji nowszej. W niniejszej pracy magisterskiej skupiono się na nowszej wersji App Inventora. 
-
-App Inventor jest systemem pozwalającym na tworzenie aplikacji poprzez używanie jedynie przeglądarki internetowej. Jest to zatem aplikacja internetowa umożliwiająca zredagowanie programu informatycznego nawet przez użytkowników dysponujących niewielkim zasobem profesjonalnej  wiedzy i umiejętności z zakresu programowania.  
-
-Potencjał aplikacji jest bardzo duży. Można to stwierdzić obserwując ilość aktywnych użytkowników. W maju 2014 ich liczba wynosiła 87tys. tygodniowo. Liczba zarejestrowanych użytkowników to 1,9mln w 195 krajach świata. Stworzyli oni łącznie 4,7mln projektów.\cite{article:appinventor1}
-
 \section{Główne komponenty}
 \label{c22}
 
@@ -102,6 +93,29 @@ System Android posiada bardzo duży wybór wśród aplikacji, które użytkownik
 Od lipca 2013 roku istnieje ponad milion aplikacji dostępnych dla systemu Android w markecie Google Play.\cite{android:34} Od maja do lipca 2013 roku, zatem w ciągu 3 miesięcy liczba instalacji wzrosła o 2 miliardy osiągając 50 miliardów.\cite{android:34}\cite{android:35}
 
 Aplikacje tworzone są głównie za pomocą języka Java przy użyciu Android SDK. Są to biblioteki programistyczne i zostały dokładniej przedstawione w dalszej części pracy. Inną możliwością tworzenia aplikacji jest App Inventor. Narzędzie dla początkujących programistów, umożliwiające programowanie wizualne.
+
+\subsection{Zarządzanie pamięcią}
+
+Urządznie z systemem Android zazwyczaj zasilane są z baterii. Android został zaprojektowany, aby zarządzać pamięcią RAM, tak aby utrzymać zurzycie energii na najniższym poziomie. Jest to przeciwieństwo do standardowych systemów operacyjnych instalowanych na komputerach, które zakładają, że są już podłączone do nieograniczonej sieci elektrycznej. Kiedy uruchomiona aplikacja nie jest w użyciu, system automatycznie może zawiesić ją w pamięci. Aplikacja nadal jest technicznie uruchomiona, ale nie zużywa żadnych zasobów, pozostając bezczynnie w tle, dopóki znowu będzie potrzebna. Ma to podwójną korzyść, zwiększenie ogólnej reaktywności urządzeń, ponieważ aplikacje nie muszą być zamykane i uruchamiane ponownie od zera, a także zapewnienie, że aplikacje działające w tle nie zużywają niepotrzebnie energii.\cite{android:36}\cite{android:37}
+
+\begin{figure}[H] 
+\centering\includegraphics[width=8cm]{figures/android/memoryManagment}
+\caption{Menadżer urządzeń oraz pogląd uruchomionych aplikacji}
+\end{figure}
+
+Na powyższym rysunku po lewej stronie został pokazany menadżer urządzeń. Użytkownik może odczytać jakie jest zużycie procesora uruchomionych aplikacji, które działają w tle. Istnieje także możliwość ich zatrzymania i usunięcia z pamięci RAM. Po prawej stronie użytkownik ma możliwość szybkiego poglądu ruchomionych aplikacji oraz zamknięcia ich.
+
+\subsection{Wykorzystanie platformy}
+
+Poniższa tabela prezentuje strukturę wersji Androida. Bazuje ona na  urządzeniach korzystających z Play Store we wrześniu 2014 roku. Dane zostąły zebrane podczas jednego tygodnia.\cite{android:38}
+
+\begin{figure}[H] 
+\centering\includegraphics[width=8cm]{figures/android/distributionChart}
+\caption{Tabela przedstawiająca rozkład wersji systemu}
+\end{figure}
+
+
+Należy pamiętać, że powyższa tabela nie obejmuje urządzeń Android, które nie korzystały z Google Play.
 
 
 \section{Pozostałe istotne komponenty}

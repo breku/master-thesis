@@ -6,7 +6,20 @@
 
 W niniejszym rozdziale zawarto opis architektury oraz główne komponenty wykorzystywane przez App Inventora. Pomoże to zrozumieć zalety oraz wady powyższego narzędzia.
 
-\section{Architektura}
+\section{App Inventor}
+\label{c21}
+
+App Inventor jest systemem pozwalającym na tworzenie aplikacji poprzez używanie jedynie przeglądarki internetowej. Jest to zatem aplikacja internetowa umożliwiająca zredagowanie programu informatycznego nawet przez użytkowników dysponujących niewielkim zasobem profesjonalnej  wiedzy i umiejętności z zakresu programowania.  
+
+\subsection{Historia}
+
+Aplikacja została uruchomiona w lipcu 2010 roku. Można było wtedy skorzystać z niej, kiedy programista złożył odpowiednie żądanie. W grudniu platforma została udostępniona publicznie. W drugiej połowie 2011 roku Google udostępnił kod źródłowy oraz został sponsorem wykładając fundusze na  stworzenie Centrum Nauki o Urządzeniach Mobilnych MIT (\english{MIT Center for Mobile Learning}). Wersja MIT została uruchomiona w marcu 2012 roku.\cite{android:39}
+
+W grudniu 2013 została wydana druga wersja systemu App Inventor. Starszą wersję określono jako Classic. Oba narzędzia są do siebie bardzo podobne, jednak projektów stworzonych w pierwszej wersji systemu nie można zaimportować do wersji nowszej. W niniejszej pracy magisterskiej skupiono się na nowszej wersji App Inventora. 
+
+Potencjał aplikacji jest bardzo duży. Można to stwierdzić obserwując ilość aktywnych użytkowników. W maju 2014 ich liczba wynosiła 87tys. tygodniowo. Liczba zarejestrowanych użytkowników to 1,9mln w 195 krajach świata. Stworzyli oni łącznie 4,7mln projektów.\cite{article:appinventor1}
+
+\subsection{Architektura}
 \label{c32}
 
 Każda aplikacja ma swoją wewnętrzną strukturę, którą trzeba dokładnie zrozumieć, aby tworzyć efektywne oprogramowanie. Architektura aplikacji składa się głównie z 2 części: komponenty oraz ich zachowanie. Można z pewnym dystansem przyjąć, że za komponenty odpowiada widok Designera, a za zachowanie komponentów widok edytora.
@@ -58,7 +71,7 @@ Zdarzenia można podzielić w zależności od jego typu:
 
 Programowanie aplikacji odbywa się poprzez zdefiniowanie interfejsu, a następnie napisanie zachowania danej aplikacji, dla różnych zdarzeń, które mogą wystąpić. Inaczej mówiąc, komponenty tworzone są najpierw w Designerze i tam przypisywane są do nich właściwości. Programista po otrzymaniu interesującego go wyglądu może przystąpić do opisu zdarzeń.
 
-\section{Debugowanie aplikacji}
+\subsection{Debugowanie aplikacji}
 \label{c33}
 
 Najłatwiejszy sposób instalacji i testowania aplikacji odbywa się przez wifi. Musimy pobrać dodatkową aplikację na urządzenie z systemem Android. Następnie na stronie App Inventora uruchamiamy opcję połączenia z telefonem i pojawia nam się na monitorze kod QR, który skanujemy telefonem, z pomocą ściągniętej aplikacji.Po wykonaniu powyższych czynności następuje automatyczna instalacja aplikacji na telefonie. Dzięki aplikacji następuje również automatyczne uaktualnienie wprowadzonych zmian, nie zachodzi konieczność jej ponownego uruchamiania. 
