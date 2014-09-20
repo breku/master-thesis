@@ -175,6 +175,49 @@ Ustawiając powyższe parametry, uruchomi się przeglądarka internetowa na stro
 
 Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ogarniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany parametr otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją od razu odczytać.
 
+\subsection{Usługa POST/GET}
+
+Aplikacja została stworzona aby przetestować komponent umożliwiający wysyłanie żądań typu GET i POST. Jako serwis obsługujący dane rządania został wybrany produkt Google o nazwie Google Charts.\cite{android:56} Jest to usługa tworząca wykresy poprzez zdefiniowanie odpowiedniego linku. Zazwyczaj są to żądania restowe, czyli za pomocą metody GET. Jednak liczba znaków w linku jest ograniczona do 2 tysięcy, dlatego czasem, trzeba skorzystać z metody POST. 
+
+
+\begin{figure}[H]
+\centering\includegraphics[height=2cm]{figures/apps/getRequest}
+\caption{Bloki tworzące żądanie typu GET}
+\end{figure}
+
+\begin{figure}[H]
+\centering\includegraphics[height=6cm]{figures/apps/postRequest}
+\caption{Bloki tworzące żądanie typu POST}
+\end{figure}
+
+Powyżej zaprezentowane są bloki potrzebne do stworzenia obu żądań. Przed wysłaniem żądania należy jest ustawić flagę zapisu plików na kartę SD na \emph{TRUE}. Inaczej nie wywoła się zdarzenie otrzymania pliku z serwera. Jak widać obługa żądań typu GET jest bardzo prosta. Programista musi podać cały link, a następnie przypisać obrazkowi odebrany plik. Przy żądaniu typu POST, do funkcji trzeba przekazać parametry w inny sposób. Mianowicie trzeba stworzyć listę, która składa się z list 2 elementowych zawierających dane w formacie klucz, wartość.
+
+
+\begin{figure}[H]
+\centering\includegraphics[height=10cm]{figures/apps/googleChart}
+\caption{Aplikacja obsługująca żądania POST i GET}
+\end{figure}
+
+Na powyższym rysunku przedstawiona jest graficzny wygląd aplikacji. Posiada ona 2 przyciski, pod którymi znajdują się 2 różne żądania. Powyżej przycisków znajduje się obrazek, który jest wypełniany w momencie otrzymania odpowiedzi z serwera. Poniżej znajdują się paramtery odpowiedzi.
+
+\subsection{Import/Eksport danych z/do pliku CSV}
+
+Aplikacja daje możliwość wyboru kontaktów za pomocą komponentu Contact Picker. Kontakty zapisuje do listy. Następnie ta lista jest konwertowana i zapisywana do pliku csv.
+
+\begin{figure}[H]
+\centering\includegraphics[height=5cm]{figures/import}
+\caption{Bloki odpowiadające za import danych z pliku}
+\end{figure}
+
+\begin{figure}[H]
+\centering\includegraphics[height=5cm]{figures/export}
+\caption{Bloki odpowiadające za eksport danych}
+\end{figure}
+
+Aplikacja działa bez zarzutu. Jedynym problemem była nazwa pliku, którą musi poprzedzać ukośnik. Wtedy dopiero App Inventor odczytuje plik z karty pamięci. Jeżeli nazwę pliku poprzedzają 2 ukośniki App Inventor szuka pliku w swoich assetach. Jeżeli nazwy pliku nie poprzedza żaden ukośnik, znajduje się on w prywanej bazie App Inventora.
+
+Eksport kontaktów był okazał się bezproblemowy. Eksportowana lista zawierająca inne listy odpowiada tabeli. Każdy wiersz tabeli jest wewnętrzną listą. Podczas importu dane mają taką samą strukturę.
+
 \section{Odtworzenie aplikacji napisanej w Javie}
 
 \subsection{Think Faster}
@@ -240,36 +283,3 @@ Na ekranie są zamieszczone 2 liczniki pokazujące liczbę poprawnych i niepopra
 
 Podsumowując powyższe obserwacje należy stwierdzić, że największy problem stanowi dynamiczne ustawianie tekstu na obrazku. Niestety nie jest to możliwe w App Inventorze. Okazuje się jednak, że prawie każdy problem można w mniej lub bardziej pracochłonny sposób rozwiązać. Wniosek jaki można tutaj postawić to, że jeżeli będziemy chcieli tworzyć grę, posiadającą wiele animacji, to lepiej się zastanowić, czy nie skupić się na nauce programowania w Javie i poznaniu bibliotek wspomagających rysowanie grafiki dwuwymiarowej.
 
-
-
-
-
-
-
-\section{Zalety programowania wizualnego}
-
-Główną zaletą programowania wizualnego jest łatwość, z jaką przychodzi pisać aplikacje. Nie trzeba być doświadczonym programistą, aby tworzyć aplikacje za pomocą App Inventora. Jeżeli ktoś jest zainteresowany programowaniem i nie wie jak zacząć, programowanie wizualne może okazać się dobrym wyborem na start. Nauka programowania wizualnego nie jest skomplikowana, wystarczą chęci. 
-
-Kolejną zaletą jest nieskomplikowany sposób stworzenia dobrze wyglądającego interfejsu graficznego (\english{GUI}). Nie znać języku XML aby zdefiniować ładny układ i wygląd ekranu. Wszystkie elementy są przeciągane z palety komponentów, a ich właściwości ustawiane również w prosty sposób.
-
-Następną zaletą są możliwości jakie daje programowanie wizualne. Mimo, że wiele funkcji nie jest dostępnych to aplikacje, które można stworzyć za pomocą App Inventora mogą być bardzo rozbudowane. Komponenty oferowane przez to środowisko pokrywają zdecydowaną większość podstawowych i najbardziej używanych elementów, których się używa podczas pisania aplikacji w języku Java. Jeżeli jakiegoś komponentu brakuje, np. przycisków typu Radio, w internecie jest wiele materiałów w jaki sposób można to obejść.
-
-Myślenie wizualne jest bardziej naturalne dla człowieka. Programowanie w App Inventorze daje programistom możliwość pisania programów poprzez manipulację elementami graficznymi. Dopiero doświadczony programista będzie potrafił sobie wyobrazić na wyższym poziomie abstrakcji kod tekstowy. Dlatego też kod aplikacji Javowej musi spełniać założenia wzorców projektowych, dzięki czemu łatwość nawigowania pomiędzy klasami i metodami jest dużo większa. W App Inventorze stworzenie zadanej funkcjonalności sprowadza się zwykle do użycia pojedynczych bloków, co daje dużą przejrzystość. Dopiero skomplikowane aplkiacje mogłyby rozrosnąć się, tak że zrozumienie ich zajełoby dużo więcej czasu niż takiej samej aplikacji napisanej w języku Java. Jednak jeżeli jest to tak skompilkowana aplikacja warto się zastanowić czy napisanie jej w App Inventorze to dobry pomysł.
-
-App Inventor może być również dobrym narzędziem do tworzenia prototypów. Aplikacje tworzone za pomocą niego powstają bardzo szybko. Stworzony układ graficzny można w krótkim czasie zaprezentować biznesowi, który dzięki temu będzie miał szansę szybko zareagować i skorygować lub zatwierdzić dany interfejs.
-
-\section{Wady programowania wizualnego}
-
-Przynajmniej na razie nie ma możliwości rozszerzenia App Inventora, więc jeżeli istniałaby potrzeba stworzenia lub skorzystania z czegoś, co nie jest wbudowane bezpośrednio w oferowaną platformę, jak np. grafika 3D, to ostatecznie okaże się że projekt nie zostanie zrealizowany.
-
-Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności. Cały framework App Inventora zużywa o wiele więcej mocy procesora, niż programy napisane w języku Java. Przy zwykłym sortowaniu program napisany w Javie jest średnio 2 tysiące razy szybszy.
-
-Stworzenie większego projektu i decyzja o użyciu App Inventora pociąga za sobą zaangażowanie wielu programistów. Nie mogą oni jednak pracować współbieżnie. Współdzielenie projektu odbywa się na zasadzie wyeksportowania go na komputer jako spakowane archiwum. Następnie kolejny programista może go zaimportować. Nie ma to jednak większego sensu, ponieważ kiedy dwie osoby będą pracować nad tym samym projektem, nie będzie można go na końcu scalić. Odwrotnie jest przy pisaniu aplikacji w języku natywnym. Istnieje bardzo wiele narzędzi do rozwiązania tego problemu, są to tzw. systemy zarządzania wersją kodu (\english{Source code management systems}).
-
-\subsection{Inne ograniczenia App Inventora}
-
-\begin{itemize}
-\item Animacja nie jest wspierana automatycznie. Jeżeli programista chciałby stworzyć animowany GIF, posiadając kilka różnych obrazków, z których ten GIF miałby się składać, musi zrobić to manualnie. Zautomatyzowanie tego procesu byłoby bardzo pomocne.
-\item App Inventor nie wspiera gestów multi-touch, czyli dotykania ekranu i wykonywanie czynności kilkoma palacmi w jednym momencie.
-\item Brak wsparcia dla rysowania obrazków o standardowych kształtach. Są to między innymi prostokąty, trójkąty, koła, tekst. Programista chcąc dodać nowy element musi najpierw go stworzyć ręcznie a następnie wysłać na serwer App Inventora.
-\end{itemize}
