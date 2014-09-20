@@ -29,7 +29,19 @@ Od 2008 roku Android wprowadzał wiele aktualizacji, które stopniowo doskonala�
 
 Domyślny interfejs użytkownika bazuje na bezpośredniej manipulacji\cite{android:24} dotykiem, który odpowiada za manipulację obeiktów znajdujących się na ekranie oraz wirtualnej klawiatury. \cite{android:24} Opowiedź na dany ruch użytkownika jest natychmiastowa, zapewniając płynność, często z wykorzystaniem funkcji wibracji urządzenia. Wenętrzny sprzęt zawarty w telefonie taki jak akcelerometr, żyroskop, czujnik optyczny, jest wykorzystywany przez niektóre aplikacje aby zapewnić odpowiedź na niektóre ruchy użytkownika.\cite{android:25} Przyładem takiej aplikacji jest regulowanie ekranu z poziomego na pionowy, w zależności od tego jak urządzenie jest zorientowane. Kolejnym przykładem są gry pozwalające sterowanie pojazdem poprzez obrót urządzenia, symulując prawdziwą kierownicę.\cite{android:26}
 
-System android uruchamia się do ekranu startowego, który jest jest głównym punktem nawigacji i informacji o urządzeniu. Zachowanie to jest podobne do zachowania znanego z komputerów stacjonarnych. Ekran startowy w Androidzie zazwyczaj składa się ikon, które uruchamiają powiązane aplikacje, widżetów, które odświeżają się automatycznie i wyświetlają aktualne informacje. Przykładami są np. widżety pokazujące pogodę, powiadomienia skrzynki pocztowej, dzienne wiadomości.\cite{android:27} Ekran startowy w większości przypadków jest stworzony z kilku stron, które użytkownik może przesuwać. Ponad to ekran ten jest mocno konfigurowalny, pozwalając użytkownikowi dostosować wygląd urządzenia do jego gustu.\cite{android:28} Apliakcje osób trzecich dostępne w markecie Google Play, a także innych marketach mogą zdecydowanie zmienić interfejs użytkownika, a nawet naśladować wygląd innych systemów operacyjnych takich jak Windows Phone.\cite{android:29} Większość producentów i niektórzy operatorzy komórkowi mogą dostosować wygląd swoich urządzeń aby różnić się od konkurencji. \cite{android:30}
+Poniżej na zaprezentowanym ekranie startowym można zaobserować jego konfigurowalność:
+
+\begin{figure}[H] 
+\centering\includegraphics[width=6cm]{figures/android/homescreen}
+\caption{Konfigurowanie ekranu startowego}
+\end{figure}
+
+System android uruchamia się do ekranu startowego, który jest jest głównym punktem nawigacji i informacji o urządzeniu. Zachowanie to jest podobne do zachowania znanego z komputerów stacjonarnych. Ekran startowy w Androidzie zazwyczaj składa się ikon, które uruchamiają powiązane aplikacje, widżetów, które odświeżają się automatycznie i wyświetlają aktualne informacje. Przykładami są np. widżety pokazujące pogodę, powiadomienia skrzynki pocztowej, dzienne wiadomości.\cite{android:27} Ekran startowy w większości przypadków jest stworzony z kilku stron, które użytkownik może przesuwać. Ponad to ekran ten jest mocno konfigurowalny, pozwalając użytkownikowi dostosować wygląd urządzenia do jego gustu.\cite{android:28} 
+
+
+
+
+Apliakcje osób trzecich dostępne w markecie Google Play, a także innych marketach mogą zdecydowanie zmienić interfejs użytkownika, a nawet naśladować wygląd innych systemów operacyjnych takich jak Windows Phone.\cite{android:29} Większość producentów i niektórzy operatorzy komórkowi mogą dostosować wygląd swoich urządzeń aby różnić się od konkurencji. \cite{android:30}
 
 W górnej części ekranu znajduje się pasek stanu, przedstawiający informacje na temat urządzenia i jego połączenia. Pasek ten można przeciągnąć w dół, aby odsłonić ekran powiadomień, gdzie wyświetlane są ważne informacje i aktualizacje, takie jak e-mail, nieodebrane połączenie. Rozwinięty pasek stanu przedstawiony jest na rysunku poniżej:
 
@@ -46,6 +58,14 @@ System Android posiada bardzo duży wybór wśród aplikacji, które użytkownik
 
 Od lipca 2013 roku istnieje ponad milion aplikacji dostępnych dla systemu Android w markecie Google Play.\cite{android:34} Od maja do lipca 2013 roku, zatem w ciągu 3 miesięcy liczba instalacji wzrosła o 2 miliardy osiągając 50 miliardów.\cite{android:34}\cite{android:35}
 
+Część aplikacji istniejących w markecie jest niskiej jakości. Google usuwa takie aplikacje raz 3 miesiące.\cite{android:49} Poniżej został zaprezentowany wykres pokazujący ilość nowych aplikacji pojawiających się w markecie. Aplikacje zostały podzielone na regularne i te o niskiej jakości:
+
+\begin{figure}[H] 
+\centering\includegraphics[width=12cm]{figures/android/numerOfApps}
+\caption{Ilość nowych aplikacji w kolejnych miesiącach}
+\end{figure}
+
+
 Aplikacje tworzone są głównie za pomocą języka Java przy użyciu Android SDK. Są to biblioteki programistyczne i zostały dokładniej przedstawione w dalszej części pracy. Inną możliwością tworzenia aplikacji jest App Inventor. Narzędzie dla początkujących programistów, umożliwiające programowanie wizualne.
 
 \subsection{Zarządzanie pamięcią}
@@ -58,6 +78,11 @@ Urządznie z systemem Android zazwyczaj zasilane są z baterii. Android został 
 \end{figure}
 
 Na powyższym rysunku po lewej stronie został pokazany menadżer urządzeń. Użytkownik może odczytać jakie jest zużycie procesora uruchomionych aplikacji, które działają w tle. Istnieje także możliwość ich zatrzymania i usunięcia z pamięci RAM. Po prawej stronie użytkownik ma możliwość szybkiego poglądu ruchomionych aplikacji oraz zamknięcia ich.
+
+\subsection{Hardware}
+
+Główną platformą sprzętową systemu Android jest 32-bitowa architektura ARMv7. W listopadzie 2013 roku, dla urządzenia z systemem w wersji 4.4 zalecane parametry to 512MB RAM. \cite{android:50} Android wspiera OpenGL ES w wersjach 1.1, 2.0, 3.0. Niektóre aplikacje wymagają konkretnej wersji OpenGL ES, tak więc nie tylko wersja androida, ale odpowiedni sprzęt jest potrzebny, aby taką aplikację uruchomić.\cite{android:51} Urządzenia z systemem android zawierają różnego typu komponenty sprzętowe. W skład wchodzą m.in: kamera, GPS, czujnik orientacji, akcelerometr, żyroskop, barometr, termometr, magnetometr, czujnik zbliżeniowy, czujnik ciśnienia. Niektóre z nich nie są wymagane, jednak w pewnych klasach urządzeń stają się standardem. Na początku system Android musiał posiadać kamerę z automatycznym ustawianiem ostrości. Dopiero po pewnym czasie wymóg ten został złagodzony do aparatu o stałej ostrości.\cite{android:52} Aktualnie tego wymogu prawdopodobnie w ogóle nie ma, ponieważ system android zaczął być używany w wielu innych typach urządzeń, które nie posiadają w ogóle kamery.
+
 
 \subsection{Wykorzystanie platformy}
 
@@ -79,6 +104,7 @@ W niniejszym rozdziale zawarto pozostałe komponenty, które zostały użyte pod
 \subsection{Android SDK}
 
 Adnroid SDK to zestaw narzędzi programistycznych oferowanych dla programistów zamierzających tworzyć aplikacje na platformę Android. Jest on modularny, poprzez SDK Managera możemy zainstalować tylko te komponenty, które nas interesują.
+Wspierane wersje systemu operacyjnego to Linux (każda nowoczesna dystrybucja), Windows XP (lub nowszy), Mac OS X 10.5.8 (lub nowszy). Aktualnie programiści mogą tworzyć aplikacje korzystając tylko z urządzenia z systemem Android za pomocą innej aplikacji która jest środowiskiem dostarczającym możliwość pisania programów w Javie lub C++. Standardowe środowiska wspierane przez Androida to Eclipse z pluginem ADT, Intellij IDEA, NetBeans również z pluginem NB.\cite{android:53} Ulepszenia zestawu narzędzi Android SDK powstają współbierznie z ogólnym rozwojem systemu Android. Nowe wersje SDK wspierają również stare, w razie potrzeby testowania apliakcji na starym sprzęcie. \cite{android:54}
  
 \subsection{SDK Tools}
 
