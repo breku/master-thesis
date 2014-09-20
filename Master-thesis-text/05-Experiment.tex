@@ -1,11 +1,9 @@
 \chapter{Wyniki eksperymentu}
 \label{c5}
 
-Dany rozdział zawiera wyniki z przeprowadzonych badań oraz wnioski. Każda aplikacja, która została napisana została przestawiona i opisana z różnych perspektyw. Na końcu rozdziału zostały przedstawione wady i zalety obu podejść.
+Dany rozdział zawiera wyniki z przeprowadzonych badań oraz wnioski. Każda aplikacja, która została napisana została przestawiona i opisana z różnych perspektyw. Na końcu rozdziału zostały przedstawione wady i zalety obu podejść. Z wyjątkiem ostatniej aplikacje zostały najpierw stworzone w App Inventorze, a następnie zostały przepisane na język Java.
 
-\section{Stworzone aplikacje}
-
-Aplikacje zostały najpierw stworzone w App Inventorze, a następnie zostały przepisane na język Java.
+\section{Aplikacje testujące wydajność}
 
 \subsection{Sortowanie}
 
@@ -49,18 +47,6 @@ W algorytmach bardzo ważna jest wydajność. Oba algorytmy działają w ten sam
 Napisanie omawianej aplikacji w Javie nie było żadnym problemem. Bardzo łatwo było zdebugowano kod i sprawdzono jego poprawność. Stworzenie tej samej aplikacji w App Inventorze nie było trywialne.
 
 
-\subsection{Akcelerometr}
-
-Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akcelerometru, a następnie wyświetla je na ekran telefonu, z zadaną częstotliwością. Na poniższym wykresie przedstawione jest zużycie procesora dla różnych wartości próbkowania. Można zauważyć, że zużycie procesora dla aplikacji napisanej w Javie jest prawie stałe. Dzieje się tak dlatego, że ustawianie częstotliwości próbkowania jest tylko wskazówką dla systemu. Zdarzenia mogą być odbierane szybciej lub wolniej niż zadana częstotliwość. Zazwyczaj są odbierane szybciej. W tym przypadku są odbierane szybciej i zmiana częstotliwości na mniejszą, tak naprawdę nic tutaj nie zmienia, ponieważ zdarzenia dalej będą odbierane szybciej. Zużycie procesora prawdopodobnie będzie dalej stałe, gdy będziemy zmniejszać częstotliwość.\cite{doc:android}
-
-\begin{figure}[H]
-\centering\includegraphics[width=10cm]{figures/apps/accelerometerChart}
-\caption{Wykres przedstawiający zużycie procesora}
-\end{figure}
-
-W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości próbkowania. Aby to obejść, trzeba dodać nowy komponent Clock, który ma możliwość uruchamiania, co zadany czas. Można podejrzewać, że wydajność akcelerometru jest niezmienna i częstotliwość próbkowania jest stała. Wyraźny spadek wydajności jest przez to, że musimy wywoływać metody w bardzo krótkich odstępach czasu i to, że one dodatkowo odczytują wartość sensora, nie wpływa znacząco na zużycie procesora.
-
-
 \subsection{Fibonacci}
 
 Następną stworzoną aplikacją jest aplikacja wyliczająca kolejny element ciągu Fibonnaciego. Testuje ona wydajność App Inventora. Złożoność takiego algorytmu to $O(2^n)$, czyli czas wykonywania będzie rósł bardzo szybko. Dodatkowo, kod jest napisany w taki sposób, aby metody wykonywały się rekurencyjnie, jednak aplikacja nie jest w stanie przetestować wielkości stosu. Dla bardzo małych liczb czas wykonywania się algorytmu jest bardzo wysoki.
@@ -92,6 +78,20 @@ No error message available
 \end{lstlisting}
 
 Można się jedynie domyślać, że jest to błąd przepełnienia stosu lub przekroczenia zakresu liczb.
+
+\section{Aplikacje testujące wbudowane elementy telefonu}
+
+\subsection{Akcelerometr}
+
+Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akcelerometru, a następnie wyświetla je na ekran telefonu, z zadaną częstotliwością. Na poniższym wykresie przedstawione jest zużycie procesora dla różnych wartości próbkowania. Można zauważyć, że zużycie procesora dla aplikacji napisanej w Javie jest prawie stałe. Dzieje się tak dlatego, że ustawianie częstotliwości próbkowania jest tylko wskazówką dla systemu. Zdarzenia mogą być odbierane szybciej lub wolniej niż zadana częstotliwość. Zazwyczaj są odbierane szybciej. W tym przypadku są odbierane szybciej i zmiana częstotliwości na mniejszą, tak naprawdę nic tutaj nie zmienia, ponieważ zdarzenia dalej będą odbierane szybciej. Zużycie procesora prawdopodobnie będzie dalej stałe, gdy będziemy zmniejszać częstotliwość.\cite{doc:android}
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/accelerometerChart}
+\caption{Wykres przedstawiający zużycie procesora}
+\end{figure}
+
+W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości próbkowania. Aby to obejść, trzeba dodać nowy komponent Clock, który ma możliwość uruchamiania, co zadany czas. Można podejrzewać, że wydajność akcelerometru jest niezmienna i częstotliwość próbkowania jest stała. Wyraźny spadek wydajności jest przez to, że musimy wywoływać metody w bardzo krótkich odstępach czasu i to, że one dodatkowo odczytują wartość sensora, nie wpływa znacząco na zużycie procesora.
+
 
 \subsection{Database}
 
@@ -157,6 +157,8 @@ Ustawiając powyższe parametry, uruchomi się przeglądarka internetowa na stro
 \subsection{Multiple Screens}
 
 Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ogarniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany parametr otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją od razu odczytać.
+
+\section{Odtworzenie aplikacji napisanej w Javie}
 
 \subsection{Think Faster}
 
