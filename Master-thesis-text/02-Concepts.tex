@@ -156,6 +156,12 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 \begin{itemize}
 
 \item \textbf{User Interface} - w większości widoczne komponenty, które są związane z interfejsem użytkownika.
+
+\begin{figure}[H] 
+\centering\includegraphics[height=8cm]{figures/components/userinterface}
+\caption{Komponenty z sekcji User Interface}
+\end{figure}
+
 \begin{itemize}
 \item Button - przycisk.
 \item CheckBox - pole wyboru.
@@ -174,6 +180,11 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 \end{itemize}
 
 \item \textbf{Layout} - Komponenty odpowiedzialne za rozmieszczenie pozostałych komponentów. Są to kontenery, w które mogą zostać umieszczane inne widoczne komponenty.
+\begin{figure}[H] 
+\centering\includegraphics[height=2cm]{figures/components/layout}
+\caption{Komponenty z sekcji Layout}
+\end{figure}
+
 \begin{itemize}
 \item HorizontalArrangement - elementy umieszczone w tym kontenerze są układanej od lewej do prawej.
 \item VerticalArrangement - odwrotne działanie do poprzedniego komponentu - elementy umieszcza się od góry do dołu.
@@ -182,6 +193,11 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 
 
 \item \textbf{Media} - Komponenty związane głównie z dźwiękiem oraz kamerą.
+\begin{figure}[H] 
+\centering\includegraphics[height=6cm]{figures/components/media}
+\caption{Komponenty z sekcji Media}
+\end{figure}
+
 \begin{itemize}
 \item Camcorder - komponent umożliwiający nagrywanie filmów. Istnieje możliwość nadania nazwy pliku zawierającego nagranie.
 \item Camera - komponent umożliwiający robienie zdjęć i zapisywanie ich.
@@ -197,6 +213,12 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 
 
 \item \textbf{Drawing and Animation} Komponenty umożliwiające rysowanie oraz animacje.
+
+\begin{figure}[H] 
+\centering\includegraphics[height=2cm]{figures/components/drawing}
+\caption{Komponenty z sekcji Drawing and Animation}
+\end{figure}
+
 \begin{itemize}
 \item Canvas - płótno, na którym możemy rysować dwuwymiarowe obrazki (\english{Sprite}). Obrazki te mogą się na płótnie poruszać. Każda lokalizacja na płótnie jest specyfikowana za pomocą współrzędnych X,Y.
 \item ImageSprite - obrazek, który możemy umieścić na płótnie i który może reagować na dotyk, przeciąganie.
@@ -204,6 +226,12 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 \end{itemize}
 
 \item \textbf{Sensors} Niektóre z sensorów, dostępnych na telefonie. Wszystkie z tych komponentów są niewidoczne.
+
+\begin{figure}[H] 
+\centering\includegraphics[height=4cm]{figures/components/sensors}
+\caption{Komponenty z sekcji Sensors}
+\end{figure}
+
 \begin{itemize}
 \item AccelerometerSenser - akcelerometr, komponent, który umożliwia wykrycie trzęsienia telefonem, podaje wartości, odpowiadające aktualnemu wychyleniu telefonu.
 \item BarcodeScanner - komponent umożliwiający skanowanie kodów kreskowych, jednak musimy posiadać dodatkowo aplikację do tego zainstalowaną już na telefonie.
@@ -214,6 +242,12 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 \end{itemize}
 
 \item \textbf{Social} - komponenty związane z kontaktami, e-mailami i serwisami społecznościowymi.
+
+\begin{figure}[H] 
+\centering\includegraphics[height=5cm]{figures/components/social}
+\caption{Komponenty z sekcji Social}
+\end{figure}
+
 \begin{itemize}
 \item ContactPicker - przycisk, którego naciśnięcie powoduje wyświetlenie podlegających wyborowi kontaktów społecznościowych. Po dokonaniu wyboru użytkownik zyskuje dostęp do następujących danych: nazwa, e-maile, telefony, zdjęcie kontaktu.
 \item EmailPicker - Textbox oferujący użytkownikowi pomoc, która polega na (automatycznym/ natychmiastowym) wyświetleniu listy adresów elektronicznych pasujących do aktualnie wpisywanego tekstu.
@@ -225,6 +259,12 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 \end{itemize}
 
 \item \textbf{Storage} - komponenty odpowiedzialne za przechowywanie danych.
+
+\begin{figure}[H] 
+\centering\includegraphics[height=3cm]{figures/components/storage}
+\caption{Komponenty z sekcji Storage}
+\end{figure}
+
 \begin{itemize}
 \item File - niewidoczny komponent umożliwiający zapis i odczyt pliku. Domyślne ustawienia zapisują pliki do prywatnego katalogu App Inventora, jednak istnieje możliwość ustawienia innej ścieżki
 \item FusiontablesControl - komponent, który komunikuje się z serwisem internetowym dostarczonym przez Google o nazwie Fusion Tables. Tabele te umożliwiają wizualizację, udostępnienie, zapis danych. Komponent ten daje możliwość dostępu do tych danych, a także jej edycji.
@@ -233,6 +273,11 @@ Repozytorium keystore, w którym znajduje się klucz, domyślnie jest stworzone 
 \end{itemize}
 
 \item \textbf{Connectivity} - komponenty umożliwiające komunikację i uruchamianie innych apliakcji.
+\begin{figure}[H] 
+\centering\includegraphics[height=3cm]{figures/components/connectivity}
+\caption{Komponenty z sekcji Connectivity}
+\end{figure}
+
 \begin{itemize}
 \item ActivityStarter - komponent do uruchamiania zewnętrznych Activity. Przez Activity są rozumiane: inne aplikacje, kamera, wyszukiwarka internetowa, otwieranie strony internetowej, aplikacji mapy w zadanej lokalizacji. Tak naprawdę, możliwe jest wystartowanie dowolnej aplikacji, jednak trzeba znać nazwę pakietu (\english{package name}) oraz nazwę klasy (\english{class name}).
 \item BluetoothClient - komponent blutetooth klienta.

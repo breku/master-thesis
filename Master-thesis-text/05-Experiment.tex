@@ -70,6 +70,13 @@ Następny program oblicza silnię danego elementu. Istnieje możliwość wyboru,
 
 Na powyższym wykresie można zaobserować wiele istotnych elementów. Aplikacja napisana w języku Java nie miała żadnych problemów w podejściu iteracyjnym. Zakres liczb nie został przekroczony, ze względu na możliwość wyboru typu danych. Potrzebna była tutaj klasa dla wielkich liczb całkowitych, dlatego został użyty typ BigInteger. Podczas użycia wersji rekurencyjnej, przy około liczeniu silni dla około 700, program rzuca wyjątek przepełnienia stosu (\english{Stack overflow}).
 
+App Inventor umożliwia pisanie funkcji, a następnie wywołanie ich rekurencyjnie. Wygląda to w następujący sposób:
+
+\begin{figure}[H]
+\centering\includegraphics[width=10cm]{figures/apps/recursiveFunction}
+\caption{Funkcja obliczająca silnie rekursywnie}
+\end{figure}
+
 Ciekawa sytuacja występuje dla aplikacji napisanej w App Inventorze. Program rzuca wyjątek podczas działania programu (\english{Runtime error}). Niestety, nie wiadomo co to za błąd, ponieważ w logach wiadomość o błędzie jest niedostępna. Wiadomość, którą otrzymujemy w logach wygląda następująco:
 
 \begin{lstlisting}
@@ -91,6 +98,16 @@ Kolejną aplikacją jest wykorzystująca akcelerometr. Odczytuje ona dane z akce
 \end{figure}
 
 W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości próbkowania. Aby to obejść, trzeba dodać nowy komponent Clock, który ma możliwość uruchamiania, co zadany czas. Można podejrzewać, że wydajność akcelerometru jest niezmienna i częstotliwość próbkowania jest stała. Wyraźny spadek wydajności jest przez to, że musimy wywoływać metody w bardzo krótkich odstępach czasu i to, że one dodatkowo odczytują wartość sensora, nie wpływa znacząco na zużycie procesora.
+
+
+\begin{figure}[H]
+\centering\includegraphics[width=14cm]{figures/apps/akcelerometerAI}
+\caption{Bloki aplikacji z akcelerometrem}
+\end{figure}
+
+Powyżej zaprezentowane są bloki konieczne do stworzenia apliakcji z akcelerometrem. Jak widać jest to tylko kilka bloków. W Javie natomiast jest więcej rzeczy do wykonania i jeżeli nie mieliśmy styczności z danym komponentem trzeba przeczytać dokumentację. Główne rzeczy jakie należy zrobić to zaimplementować odpowiedni interfejs i zainicjować sensor przy uruchamianiu aplikacji.
+
+
 
 
 \subsection{Database}
@@ -248,3 +265,11 @@ Przynajmniej na razie nie ma możliwości rozszerzenia App Inventora, więc jeż
 Implementacja App Inventora nie jest zoptymalizowana dla gier o wysokiej wydajności. Cały framework App Inventora zużywa o wiele więcej mocy procesora, niż programy napisane w języku Java. Przy zwykłym sortowaniu program napisany w Javie jest średnio 2 tysiące razy szybszy.
 
 Stworzenie większego projektu i decyzja o użyciu App Inventora pociąga za sobą zaangażowanie wielu programistów. Nie mogą oni jednak pracować współbieżnie. Współdzielenie projektu odbywa się na zasadzie wyeksportowania go na komputer jako spakowane archiwum. Następnie kolejny programista może go zaimportować. Nie ma to jednak większego sensu, ponieważ kiedy dwie osoby będą pracować nad tym samym projektem, nie będzie można go na końcu scalić. Odwrotnie jest przy pisaniu aplikacji w języku natywnym. Istnieje bardzo wiele narzędzi do rozwiązania tego problemu, są to tzw. systemy zarządzania wersją kodu (\english{Source code management systems}).
+
+\subsection{Inne ograniczenia App Inventora}
+
+\begin{itemize}
+\item Animacja nie jest wspierana automatycznie. Jeżeli programista chciałby stworzyć animowany GIF, posiadając kilka różnych obrazków, z których ten GIF miałby się składać, musi zrobić to manualnie. Zautomatyzowanie tego procesu byłoby bardzo pomocne.
+\item App Inventor nie wspiera gestów multi-touch, czyli dotykania ekranu i wykonywanie czynności kilkoma palacmi w jednym momencie.
+\item Brak wsparcia dla rysowania obrazków o standardowych kształtach. Są to między innymi prostokąty, trójkąty, koła, tekst. Programista chcąc dodać nowy element musi najpierw go stworzyć ręcznie a następnie wysłać na serwer App Inventora.
+\end{itemize}
