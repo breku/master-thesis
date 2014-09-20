@@ -76,3 +76,125 @@ Programowanie aplikacji odbywa się poprzez zdefiniowanie interfejsu, a następn
 
 Najłatwiejszy sposób instalacji i testowania aplikacji odbywa się przez wifi. Musimy pobrać dodatkową aplikację na urządzenie z systemem Android. Następnie na stronie App Inventora uruchamiamy opcję połączenia z telefonem i pojawia nam się na monitorze kod QR, który skanujemy telefonem, z pomocą ściągniętej aplikacji.Po wykonaniu powyższych czynności następuje automatyczna instalacja aplikacji na telefonie. Dzięki aplikacji następuje również automatyczne uaktualnienie wprowadzonych zmian, nie zachodzi konieczność jej ponownego uruchamiania. 
 Powyżej opisany sposób debugowania aplikacji jest rekomendowany, ale należy wspomnieć o istnieniu dwóch innych możliwości. Jedna z nich odnosi się do przypadku, gdy nie posiadamy urządzenia z systemem Android. Możemy wówczas użyć emulatora. Trzecia opcja to możliwość połączenia telefonu z komputerem i aplikacją przez kabel USB. 
+
+\section{Praca ze środowiskiem App Inventor}
+
+\subsection{Podłączenie telefonu/tabletu}
+
+Aby zacząć pracę z App Inventorem należy połączyć telefon z platformą. Designer i Block Editor działają całkowicie w przeglądarce. Aby zobaczyć aplikację podczas budowania trzeba wybrać jedną z trzech możliwości.\cite{android:40}
+
+Pierwszą opcją jest rekomendowaną przez App Inventora jest użycie WiFi. Nie trzeba wtedy instalować żadnych programów na komputerze. Jedną aplikacją, którą należy zainstalować jest \emph{App Inventor Companion App}.
+
+\begin{figure}[H] 
+\centering\includegraphics[width=8cm]{figures/option1wifi}
+\caption{Połączenie telefonu przez WiFi}
+\end{figure}
+
+Kolejną opcja jest dla osób nie posiadających urządzenia z systemem Android. Należy zainstalować oprogramowanie umożliwiające uruchomienie emulatora. Jest to również przydatna opcja, gdy nauczyciel musi pracować z grupą studentów i musi każdemu z nich zapewnić urządzenie z Androidem.\cite{android:40}
+
+\begin{figure}[H] 
+\centering\includegraphics[width=6cm]{figures/option2emulator}
+\caption{Korzystanie z emulatora zainstalowanego na komputerze}
+\end{figure}
+
+Ostatnią opcją jest zainstalowanie odpowiedniego oprogramowania, aby połączyć zewnętrzne urządzenie z systemem Android za pomocą USB. Może to być przydane również gdy niektóre zapory sieciowe w szkołach i innych organizacjach blokują dosęp do WiFi.\cite{android:40}
+
+\begin{figure}[H] 
+\centering\includegraphics[width=6cm]{figures/option3usb}
+\caption{Korzystanie z telefonu podłączonego za pomocą USB}
+\end{figure}
+
+\subsection{Współdzielenie i budowanie aplikacji}
+
+Istnieje możliwość współdzielenia stworzonych aplikacji w wykonywalnym formacie \emph{.apk}, które mogą zostać zainstalowane na urządzeniu lub w wersji dającej możliwość edycji w platformie - jest to format \emph{.aia}. Dodatkowo aplikacje stowrzone za pomocą App Inventora można udostępniać w markecie Google Play.\cite{android:41}
+
+\subsection{Porady i wskazówki}
+
+Istnieje kilka elementów, które ułatwiają pracę z tworzonymi aplikacjami. Poniżej zostały one wskazane.\cite{android:42}
+
+\begin{itemize}
+\item Tworzenie komentarzy - platforma daje możliwość pisania komentarzy przy zdefiniowanych blokach. Mimo że jest to programowanie wizualne, warto to robić, aby inni, którzy będą patrzeć na stworzoną aplikację szybciej zrozumieli jej działanie.
+\item Kondensowanie bloków - tworząc większy projekt, ilość bloków na ekranie osiąga znaczącą liczbę i nie jest łatwo programiście się odnaleźć. App Inventor daje możliwość ukrywania bloków, aby zrobić więcej miejsca na ekranie i tym samym ułatwiając tworzenie aplikacji.
+\item Szybkie wybieranie - po stworzeniu kilku aplikacji programista ma świadomość jakie bloki oferuje App Inventor. Aby w szybki sposób stowrzyć kolejne wystarczy, że zacznie on pisać potrzebną mu nazwę bloku. Dana czynność wyświetli listę, pasujących do wpisanego słowa, bloków.
+\item Szybkie usuwanie - zamiast przeciągania bloków do ikony śmietnika, można użyć klawisza \emph{DEL}.
+\item Kopiuj/Wklej - jeżeli istnieje potrzeba wykorzystania jeszcze raz wcześniej stworzonych już bloków, App Inventor umożliwia ich skopiowanie i wklejenie.
+\end{itemize}
+
+\subsection{Nowości w 2 wersji}
+
+App Inventor różni się od poprzedniej wersji w wielu aspektach.\cite{android:43} Niektóre elementy wydają się tak naturalne, że niektórzy mogą się zastanawiać, jak programiści mogli używać App Inventora w poprzedniej wersji. Poniżej zaprezentowo kilka z nich:
+
+\begin{itemize}
+\item Listy rozwijane - niektóre bloki w App Inventorze mają do wyboru listę rozwijaną odpowiadającą za właściwości komponentu.\cite{android:44} 
+\begin{figure}[H] 
+\centering\includegraphics[width=6cm]{figures/dropdowns}
+\caption{Wykorzystanie zmiany właściwości za pomocą listy rozwijanej}
+\end{figure}
+
+\item Mutatory - nowa funkcja dająca możliwość niektórym blokom rozbudowania się lub pomniejszenia, a nawet zmianę dotychczasowego zachowania. Mutatory mogą zmieniać kształt. Programista ma możliwość przeciągnięcia dodatkowych mniejszych bloczków i przypisanie ich do bloku głównego.\cite{android:45} Poniżej na obrazku zaprezentowane są często używane mutatory:
+
+\begin{figure}[H] 
+\centering\includegraphics[width=10cm]{figures/mutators}
+\caption{Mutator łączenia tekstu oraz działań matematycznych}
+\end{figure}
+
+\item Zmienne lokalne i globalne - zmienna globalna jest komponentem dostępnym w każdym bloku. Programista może w każdym miejscu zmienić lub odczytać jej wartość. Zmienne lokalne deklarowane są wewnątrz funkcji lub jest to argument przekazany do funkcji. Oznaczna to że można uzyskać do nich dostęp tylko w zadeklarowanym obszarze.\cite{android:46}
+
+\item Emulator - ze względu braku urządzenia z systemem Android istnieje możliwość tworzenia aplikacji używając emulatora. Działa on tak samo jak urządzenie zewnętrzne, tylko że wyświetla się na monitorze komputera. Większość szkół nie posiada funduszy na dużą liczbę urządzeń z systemem Android. Uczniowe tworzą wtedy aplikacje za pomocą emulatora, a następnie używają urządznia do końcowych testów.\cite{android:47}
+
+\item Kolory - w drugiej wersji App Inventor dostarczył bloki dające możliwość wybrania koloru. Programista może wybrać kolor z predefiniowanej palety, lub skorzystać z odpowiedniego bloku podając wartości RGB.\cite{android:48}
+
+\item App Inventor działa całkowicie w przeglądarcie internetowej. Poprzednio należało zainstalować plik Javy nazwany Block Editor. Aktualnie Block Editor jest to inny tryb, w który można się przełączyć z przeglądarce.\cite{android:43}
+
+\item Wyeksportowany kod posiada rozszerzenie \emph{.aia} zamiast \emph{.zip} \cite{android:43}
+
+\end{itemize}
+
+\section{Główne komponenty}
+\label{c22}
+
+App Inventor celowo ułatwia programowanie poprzez wizualizację tworzonych komponentów i intuicyjny interfejs. App Inventor składa się z 3 głównych komponentów, jakimi są:
+\begin{itemize}
+\item App Inventor Designer
+\item App Inventor Blocks Editor
+\item Android Device Emulator
+\end{itemize}
+
+\subsection{App Inventor Designer}
+\label{c221}
+
+Jednym z głównych widoków których można używać jest widok Designera. Projektowanie interfejsu użytkownika polega na przeciąganiu komponentów z dostępnej palety, wliczając w to także niewidoczne komponenty, takie jak sensory. W tym widoku można również zmieniać właściwości obiektów, które zostały stworzone. Między innymi istnieje możliwość zmiany położenia, wielkości, układu (pionowy, poziomy).
+
+Designer jest zaprojektowany jako zwykła aplikacja internetowa. Tak więc uruchamia się go, jak zwykłą stronę internetową wpisując jej adres www.
+
+\begin{figure}[th] 
+\centering\includegraphics[width=10cm]{figures/designer}
+\caption{App Inventor Designer}
+\end{figure}
+
+\subsection{App Inventor Blocks Editor}
+\label{c222}
+
+Drugim widokiem jest Blocks Editor. Zachowanie aplikacji zostaje tutaj zaprogramowane poprzez połączenie odpowiednich bloków. Istnieje możliwość korzystania z bardziej generalnych komponentów, a także z bardziej specyficznych. Dla każdego komponentu, który został stworzony w interfejsie graficznym (Designerze) są dostępne bloki mówiące, co tak naprawdę jest możliwe do zrobienia. Wygląda to w ten sposób, że komponenty są przciągane z dostępnej palety metodą "przeciągnij i upuść", a następnie łączone jak puzzle.
+
+Ta część aplikacji normalnie reprezentowana jest przez kod napisany przez programistę. Zatem napisanie zachowania aplikacji odbywa się poprzez łączenie puzzli, bez wymogu znajomości języka Java.
+
+\begin{figure}[H] 
+\centering\includegraphics[width=10cm]{figures/editor}
+\caption{App Inventor Blocks Editor}
+\end{figure}
+
+\subsection{Android Device Emulator}
+\label{c223}
+
+Android Device Emulator jest to emulator telefonu lub tabletu. Przedstawia on wirtualną wersję smartphonu, w której znajdują się obsługa dotyku ekranu, przyciski systemowe oraz typowe funkcje.
+
+Wprowadzone zmiany, natychmiast reflektują na działanie aplikacji. Nie ma potrzeby jakiejkolwiek kompilacji i uruchamiania aplikacji od nowa. Jeżeli aplikacja zostanie uruchomiana, kompilacja zmienionych fragmentów oraz zainstalowanie ich na emulatorze dzieje się w czasie rzeczywistym. Jest to bardzo wygodna opcja budowania aplikacji i testowania jej. Zmiany, które zrobimy, są od razu widoczne na ekranie.
+
+\begin{figure}[H] 
+\centering\includegraphics[width=10cm]{figures/emulator}
+\caption{Android Device Emulator}
+\end{figure}
+
+
+
