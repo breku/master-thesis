@@ -25,6 +25,22 @@ W 2010 roku Google rozpoczął produkować serię urządzeń pod nazwą Nexus - 
 
 Od 2008 roku Android wprowadzał wiele aktualizacji, które stopniowo doskonalały pierwotny system, dodając nowe funkcje i poprawiając błędy w poprzednich wersjach. Każda główna wersja systemu została nazwana w konwencji alfabetycznej po nazwie deseru lub innej słodkości. Przykładami są tutaj: wersja 1.5 Cupcake, następnie wersja 1.6 Donut. Ostatnia wersja 4.4.4 KitKat pojawiła się tylko jako aktualizacja zabezpieczeń, została wydana w czerwcu 2014 roku, krótko po wydaniu wersji poprzedniej 4.4.3.\cite{android:21}\cite{android:22}\cite{android:23}
 
+
+\subsection{Wykorzystanie platformy}
+
+Poniższa tabela prezentuje strukturę wersji Androida. Bazuje ona na  urządzeniach korzystających z Play Store we wrześniu 2014 roku. Dane zostąły zebrane podczas jednego tygodnia.\cite{android:38}
+
+\begin{figure}[H] 
+\centering\includegraphics[width=8cm]{figures/android/distributionChart}
+\caption{Tabela przedstawiająca rozkład wersji systemu}
+\end{figure}
+
+
+Należy pamiętać, że powyższa tabela nie obejmuje urządzeń Android, które nie korzystały z Google Play.
+
+
+
+
 \subsection{Interfejs}
 
 Domyślny interfejs użytkownika bazuje na bezpośredniej manipulacji\cite{android:24} dotykiem, który odpowiada za manipulację obeiktów znajdujących się na ekranie oraz wirtualnej klawiatury. \cite{android:24} Opowiedź na dany ruch użytkownika jest natychmiastowa, zapewniając płynność, często z wykorzystaniem funkcji wibracji urządzenia. Wenętrzny sprzęt zawarty w telefonie taki jak akcelerometr, żyroskop, czujnik optyczny, jest wykorzystywany przez niektóre aplikacje aby zapewnić odpowiedź na niektóre ruchy użytkownika.\cite{android:25} Przyładem takiej aplikacji jest regulowanie ekranu z poziomego na pionowy, w zależności od tego jak urządzenie jest zorientowane. Kolejnym przykładem są gry pozwalające sterowanie pojazdem poprzez obrót urządzenia, symulując prawdziwą kierownicę.\cite{android:26}
@@ -61,12 +77,29 @@ Od lipca 2013 roku istnieje ponad milion aplikacji dostępnych dla systemu Andro
 Część aplikacji istniejących w markecie jest niskiej jakości. Google usuwa takie aplikacje raz 3 miesiące.\cite{android:49} Poniżej został zaprezentowany wykres pokazujący ilość nowych aplikacji pojawiających się w markecie. Aplikacje zostały podzielone na regularne i te o niskiej jakości:
 
 \begin{figure}[H] 
-\centering\includegraphics[width=12cm]{figures/android/numerOfApps}
+\centering\includegraphics[width=15cm]{figures/android/numerOfApps}
 \caption{Ilość nowych aplikacji w kolejnych miesiącach}
 \end{figure}
 
 
 Aplikacje tworzone są głównie za pomocą języka Java przy użyciu Android SDK. Są to biblioteki programistyczne i zostały dokładniej przedstawione w dalszej części pracy. Inną możliwością tworzenia aplikacji jest App Inventor. Narzędzie dla początkujących programistów, umożliwiające programowanie wizualne.
+
+
+\subsection{Oprogramowanie systemu}
+
+System Android można podzielić na 4 warstwy. Najniższą warstwą jest jądro Linuxa. Znajdują się tam głównie sterowniki, oraz funkcje odpowiedzialne za zarządzanie pamięcią oraz mocą. W drugiej warstwie znajduje się oprogramowanie pośredniczące pomiędzy warstwą 1 a 3. Dodatkowo umieszczone są tam różne biblioteki i API napisane w języku C. Android używa wirtualną maszynę Dalvika aby uruchamiać kod \emph{dex-code} (\english{Dalvik Executable}), który zazwyczaj jest tłumaczony z języka Java.\cite{android:61}\cite{android:62} W ostatniej warstwie znajdują się aplikacje zainstalowane na urządzeniu które działają w oparciu o frameworki z warstwy trzeciej. Najnowsza wersja Androida (KitKat) wspiera dodatkowo nową eksperymentalną wirtualną maszynę o nazwie Android Runtime (ART), która nie jest domyślnie włączona.\cite{android:63}
+
+\begin{figure}[H] 
+\centering\includegraphics[width=10cm]{figures/android/stack}
+\caption{Warstwy systemu Android}
+\end{figure}
+
+Powyżej znajduje się rysunek przedstawiający 4 warstwy systemu wraz z komponentami, z których się one składają.
+
+\subsection{Hardware}
+
+Główną platformą sprzętową systemu Android jest 32-bitowa architektura ARMv7. W listopadzie 2013 roku, dla urządzenia z systemem w wersji 4.4 zalecane parametry to 512MB RAM. \cite{android:50} Android wspiera OpenGL ES w wersjach 1.1, 2.0, 3.0. Niektóre aplikacje wymagają konkretnej wersji OpenGL ES, tak więc nie tylko wersja androida, ale odpowiedni sprzęt jest potrzebny, aby taką aplikację uruchomić.\cite{android:51} Urządzenia z systemem android zawierają różnego typu komponenty sprzętowe. W skład wchodzą m.in: kamera, GPS, czujnik orientacji, akcelerometr, żyroskop, barometr, termometr, magnetometr, czujnik zbliżeniowy, czujnik ciśnienia. Niektóre z nich nie są wymagane, jednak w pewnych klasach urządzeń stają się standardem. Na początku system Android musiał posiadać kamerę z automatycznym ustawianiem ostrości. Dopiero po pewnym czasie wymóg ten został złagodzony do aparatu o stałej ostrości.\cite{android:52} Aktualnie tego wymogu prawdopodobnie w ogóle nie ma, ponieważ system android zaczął być używany w wielu innych typach urządzeń, które nie posiadają w ogóle kamery.
+
 
 \subsection{Zarządzanie pamięcią}
 
@@ -79,32 +112,7 @@ Urządznie z systemem Android zazwyczaj zasilane są z baterii. Android został 
 
 Na powyższym rysunku po lewej stronie został pokazany menadżer urządzeń. Użytkownik może odczytać jakie jest zużycie procesora uruchomionych aplikacji, które działają w tle. Istnieje także możliwość ich zatrzymania i usunięcia z pamięci RAM. Po prawej stronie użytkownik ma możliwość szybkiego poglądu ruchomionych aplikacji oraz zamknięcia ich.
 
-\subsection{Hardware}
 
-Główną platformą sprzętową systemu Android jest 32-bitowa architektura ARMv7. W listopadzie 2013 roku, dla urządzenia z systemem w wersji 4.4 zalecane parametry to 512MB RAM. \cite{android:50} Android wspiera OpenGL ES w wersjach 1.1, 2.0, 3.0. Niektóre aplikacje wymagają konkretnej wersji OpenGL ES, tak więc nie tylko wersja androida, ale odpowiedni sprzęt jest potrzebny, aby taką aplikację uruchomić.\cite{android:51} Urządzenia z systemem android zawierają różnego typu komponenty sprzętowe. W skład wchodzą m.in: kamera, GPS, czujnik orientacji, akcelerometr, żyroskop, barometr, termometr, magnetometr, czujnik zbliżeniowy, czujnik ciśnienia. Niektóre z nich nie są wymagane, jednak w pewnych klasach urządzeń stają się standardem. Na początku system Android musiał posiadać kamerę z automatycznym ustawianiem ostrości. Dopiero po pewnym czasie wymóg ten został złagodzony do aparatu o stałej ostrości.\cite{android:52} Aktualnie tego wymogu prawdopodobnie w ogóle nie ma, ponieważ system android zaczął być używany w wielu innych typach urządzeń, które nie posiadają w ogóle kamery.
-
-\subsection{Oprogramowanie}
-
-System Android można podzielić na 4 warstwy. Najniższą warstwą jest jądro Linuxa. Znajdują się tam głównie sterowniki, oraz funkcje odpowiedzialne za zarządzanie pamięcią oraz mocą. W drugiej warstwie znajduje się oprogramowanie pośredniczące pomiędzy warstwą 1 a 3. Dodatkowo umieszczone są tam różne biblioteki i API napisane w języku C. Android używa wirtualną maszynę Dalvika aby uruchamiać kod \emph{dex-code} (\english{Dalvik Executable}), który zazwyczaj jest tłumaczony z języka Java.\cite{android:61}\cite{android:62} W ostatniej warstwie znajdują się aplikacje zainstalowane na urządzeniu które działają w oparciu o frameworki z warstwy trzeciej. Najnowsza wersja Androida (KitKat) wspiera dodatkowo nową eksperymentalną wirtualną maszynę o nazwie Android Runtime (ART), która nie jest domyślnie włączona.\cite{android:63}
-
-\begin{figure}[H] 
-\centering\includegraphics[width=8cm]{figures/android/stack}
-\caption{Warstwy systemu Android}
-\end{figure}
-
-Powyżej znajduje się rysunek przedstawiający 4 warstwy systemu wraz z komponentami, z których się one składają.
-
-\subsection{Wykorzystanie platformy}
-
-Poniższa tabela prezentuje strukturę wersji Androida. Bazuje ona na  urządzeniach korzystających z Play Store we wrześniu 2014 roku. Dane zostąły zebrane podczas jednego tygodnia.\cite{android:38}
-
-\begin{figure}[H] 
-\centering\includegraphics[width=8cm]{figures/android/distributionChart}
-\caption{Tabela przedstawiająca rozkład wersji systemu}
-\end{figure}
-
-
-Należy pamiętać, że powyższa tabela nie obejmuje urządzeń Android, które nie korzystały z Google Play.
 
 
 \section{Pozostałe istotne komponenty}
