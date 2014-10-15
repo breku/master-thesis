@@ -14,7 +14,7 @@ Aplikacja polega na wygenerowaniu listy losowych elementów, a następnie posort
 \caption{Aplikacja sortująca - App Inventor}
 \end{figure}
 
-Na powyższym rysunku widać bloki potrzebne do stowrzenia aplikacji w App Inventorze. Bez głębszej analizy zrozumienie działania bloków, może okazać się kłopotliwe. Jest to prosty algorytm, a napisanie go za pomocą dostępnych bloków okazało się skomplikowane. Można sobie łatwo wyobrazić, że napisanie bardziej skomplikowanego algorytmu byłoby bardzo nieczytelne. Ilość użytych bloków zdecydowanie by wzrosła, dodatkowo utrzymanie takiej aplikacji niesie za sobą wysokie koszty wprowadzenia nowych osób do jej rozwijania.
+Na powyższym rysunku widać bloki potrzebne do stworzenia aplikacji w App Inventorze. Bez głębszej analizy zrozumienie działania bloków, może okazać się kłopotliwe. Jest to prosty algorytm, a napisanie go za pomocą dostępnych bloków okazało się skomplikowane. Można sobie łatwo wyobrazić, że napisanie bardziej skomplikowanego algorytmu byłoby bardzo nieczytelne. Ilość użytych bloków zdecydowanie by wzrosła, dodatkowo utrzymanie takiej aplikacji niesie za sobą wysokie koszty wprowadzenia nowych osób do jej rozwijania.
 
 Sortowanie napisanie w Javie jest zrozumiałe dla każdego programisty. Do sortowania została użyta lista, jako odpowiednik listy w App Inventorze, nie ma tam dostępnych tablic.
 
@@ -68,7 +68,7 @@ Następny program oblicza silnię danego elementu. Istnieje możliwość wyboru,
 \caption{Wykres przedstawiający czas obliczenia silni danego elementu}
 \end{figure}
 
-Na powyższym wykresie można zaobserować wiele istotnych elementów. Aplikacja napisana w języku Java nie miała żadnych problemów w podejściu iteracyjnym. Zakres liczb nie został przekroczony, ze względu na możliwość wyboru typu danych. Potrzebna była tutaj klasa dla wielkich liczb całkowitych, dlatego został użyty typ BigInteger. Podczas użycia wersji rekurencyjnej, przy około liczeniu silni dla około 700, program rzuca wyjątek przepełnienia stosu (\english{Stack overflow}).
+Na powyższym wykresie można zaobserwować wiele istotnych elementów. Aplikacja napisana w języku Java nie miała żadnych problemów w podejściu iteracyjnym. Zakres liczb nie został przekroczony, ze względu na możliwość wyboru typu danych. Potrzebna była tutaj klasa dla wielkich liczb całkowitych, dlatego został użyty typ BigInteger. Podczas użycia wersji rekurencyjnej, przy około liczeniu silni dla około 700, program rzuca wyjątek przepełnienia stosu (\english{Stack overflow}).
 
 App Inventor umożliwia pisanie funkcji, a następnie wywołanie ich rekurencyjnie. Wygląda to w następujący sposób:
 
@@ -105,7 +105,7 @@ W AppInventorze nie można zadać bezpośrednio akcelerometrowi częstotliwości
 \caption{Bloki aplikacji z akcelerometrem}
 \end{figure}
 
-Powyżej zaprezentowane są bloki konieczne do stworzenia apliakcji z akcelerometrem. Jak widać jest to tylko kilka bloków. W Javie natomiast jest więcej rzeczy do wykonania i jeżeli nie mieliśmy styczności z danym komponentem trzeba przeczytać dokumentację. Główne rzeczy jakie należy zrobić to zaimplementować odpowiedni interfejs i zainicjować sensor przy uruchamianiu aplikacji.
+Powyżej zaprezentowane są bloki konieczne do stworzenia aplikacji z akcelerometrem. Jak widać jest to tylko kilka bloków. W Javie natomiast jest więcej rzeczy do wykonania i jeżeli nie mieliśmy styczności z danym komponentem trzeba przeczytać dokumentację. Główne rzeczy jakie należy zrobić to zaimplementować odpowiedni interfejs i zainicjować sensor przy uruchamianiu aplikacji.
 
 
 
@@ -132,7 +132,7 @@ Aplikacja testuje możliwości animacyjne App Inventora. Wiadomo, że komponenty
 \caption{Bloki potrzebne do stworzenia aplikacji}
 \end{figure}
 
-Na głównym ekranie aplikacji stworzone jest płótno oraz jeden obrazek, który podmieniamy co zadany interwał czasu. Ostatecznym rezulatatem jest płynna animacja. Dopiero przy bardzo niskim interwale czasowym (szybkiej zmianie klatek), można było odczuć przycinanie się ekranu.
+Na głównym ekranie aplikacji stworzone jest płótno oraz jeden obrazek, który podmieniamy co zadany interwał czasu. Ostatecznym rezultatem jest płynna animacja. Dopiero przy bardzo niskim interwale czasowym (szybkiej zmianie klatek), można było odczuć przycinanie się ekranu.
 
 
 \subsection{Kolizja elementów}
@@ -162,7 +162,7 @@ START {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER]
 flg=0x10200000 cmp=org.mozilla.firefox/.App u=0} from pid 726
 \end{lstlisting}
 
-Jeżeli pojawi się fragmet z parametrem cmp, to nazwą pakietu jest tekst przed ukośnikiem, a nazwą klasy jest cały tekst bez ukośnika. Zatem komponent ActivityStarter daje możliwość uruchomienia prawie każdej aplikacji. Aplikacja nie musi być stworzona w App Inventorze, może to być dowolna aplikacja zainstalowana na urządzeniu. Istnieje również możliwość przekazania dodatkowych parametrów, przy uruchamianiu zewnętrznej aplikacji. Niektóre z nich są nawet zaprojektowane w ten sposób, aby przyjmować dodatkowe parametry podczas uruchamiania. Przykładem są tutaj aplikacja map, która przyjmie jako paramter wartości geograficzne. Innym przykładem jest wyszukiwarka internetowa, która przyjmie jako parametr tekst do wyszukania lub adres do wyświetlenia.
+Jeżeli pojawi się fragment z parametrem cmp, to nazwą pakietu jest tekst przed ukośnikiem, a nazwą klasy jest cały tekst bez ukośnika. Zatem komponent ActivityStarter daje możliwość uruchomienia prawie każdej aplikacji. Aplikacja nie musi być stworzona w App Inventorze, może to być dowolna aplikacja zainstalowana na urządzeniu. Istnieje również możliwość przekazania dodatkowych parametrów, przy uruchamianiu zewnętrznej aplikacji. Niektóre z nich są nawet zaprojektowane w ten sposób, aby przyjmować dodatkowe parametry podczas uruchamiania. Przykładem są tutaj aplikacja map, która przyjmie jako parametr wartości geograficzne. Innym przykładem jest wyszukiwarka internetowa, która przyjmie jako parametr tekst do wyszukania lub adres do wyświetlenia.
 
 \begin{lstlisting}
 Action: android.intent.action.VIEW
@@ -173,11 +173,11 @@ Ustawiając powyższe parametry, uruchomi się przeglądarka internetowa na stro
 
 \subsection{Multiple Screens}
 
-Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ogarniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany parametr otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją od razu odczytać.
+Jeżeli obie aplikacje mają być napisane przez tego samego programistę, warto się zastanowić, czy nie zrobić jednej aplikacji z wieloma ekranami. Zwiększy to użyteczność aplikacji, użytkownicy nie będą musieli instalować dwóch. Używając ActivityStartera dotychczas istnieje możliwość przekazywania tylko parametrów tekstowych. Natomiast przy użyciu wielu ekranów, można przekazywać dodatkowo listy. Kiedy aplikacja korzysta z bazy danych, również jest ona współdzielona pomiędzy ekranami. Otworzony ekran daje możliwość powrotu do ekranu, który go otworzył. Ilość ekranów nie jest ograniczona, ale zamknięcie ekranu powraca do tego, który go otworzył. Z drugiej strony łatwo to obejść, tworząc ekran, który będzie menadżerem innych ekranów i będzie on uruchamiał pozostałe. Jeżeli z uruchomionego ekranu użytkownik będzie chciał przejść do innego, aplikacja powróci do menadżera z parametrem, a menadżer w odpowiedzi na dany parametr otworzy inny ekran. Zatem tak samo jak w przypadku aplikacji wykorzystującej komponent ActivityStarter istnieje możliwość przekazywania i odbierania parametrów pomiędzy ekranami. Każdy stworzony ekran będzie miał swój wygląd oraz własne komponenty w oknie Designera. Stworzenie jednej bazy danych może być trochę nieintuicyjnie, ponieważ każdy ekran musi posiadać swój komponent TinyDB. Aczkolwiek jest to jedna i ta sama baza danych. Jeżeli jeden ekran zapisze jakąś wartość, drugi może ją od razu odczytać.
 
 \subsection{Usługa POST/GET}
 
-Aplikacja została stworzona aby przetestować komponent umożliwiający wysyłanie żądań typu GET i POST. Jako serwis obsługujący dane rządania został wybrany produkt Google o nazwie Google Charts.\cite{android:56} Jest to usługa tworząca wykresy poprzez zdefiniowanie odpowiedniego linku. Zazwyczaj są to żądania restowe, czyli za pomocą metody GET. Jednak liczba znaków w linku jest ograniczona do 2 tysięcy, dlatego czasem, trzeba skorzystać z metody POST. 
+Aplikacja została stworzona aby przetestować komponent umożliwiający wysyłanie żądań typu GET i POST. Jako serwis obsługujący dane żądania został wybrany produkt Google o nazwie Google Charts.\cite{android:56} Jest to usługa tworząca wykresy poprzez zdefiniowanie odpowiedniego linku. Zazwyczaj są to żądania restowe, czyli za pomocą metody GET. Jednak liczba znaków w linku jest ograniczona do 2 tysięcy, dlatego czasem, trzeba skorzystać z metody POST. 
 
 
 \begin{figure}[H]
@@ -190,7 +190,7 @@ Aplikacja została stworzona aby przetestować komponent umożliwiający wysyła
 \caption{Bloki tworzące żądanie typu POST}
 \end{figure}
 
-Powyżej zaprezentowane są bloki potrzebne do stworzenia obu żądań. Przed wysłaniem żądania należy jest ustawić flagę zapisu plików na kartę SD na \emph{TRUE}. Inaczej nie wywoła się zdarzenie otrzymania pliku z serwera. Jak widać obługa żądań typu GET jest bardzo prosta. Programista musi podać cały link, a następnie przypisać obrazkowi odebrany plik. Przy żądaniu typu POST, do funkcji trzeba przekazać parametry w inny sposób. Mianowicie trzeba stworzyć listę, która składa się z list 2 elementowych zawierających dane w formacie klucz, wartość.
+Powyżej zaprezentowane są bloki potrzebne do stworzenia obu żądań. Przed wysłaniem żądania należy jest ustawić flagę zapisu plików na kartę SD na \emph{TRUE}. Inaczej nie wywoła się zdarzenie otrzymania pliku z serwera. Jak widać obsługa żądań typu GET jest bardzo prosta. Programista musi podać cały link, a następnie przypisać obrazkowi odebrany plik. Przy żądaniu typu POST, do funkcji trzeba przekazać parametry w inny sposób. Mianowicie trzeba stworzyć listę, która składa się z list 2 elementowych zawierających dane w formacie klucz, wartość.
 
 
 \begin{figure}[H]
@@ -198,7 +198,7 @@ Powyżej zaprezentowane są bloki potrzebne do stworzenia obu żądań. Przed wy
 \caption{Aplikacja obsługująca żądania POST i GET}
 \end{figure}
 
-Na powyższym rysunku przedstawiona jest graficzny wygląd aplikacji. Posiada ona 2 przyciski, pod którymi znajdują się 2 różne żądania. Powyżej przycisków znajduje się obrazek, który jest wypełniany w momencie otrzymania odpowiedzi z serwera. Poniżej znajdują się paramtery odpowiedzi.
+Na powyższym rysunku przedstawiona jest graficzny wygląd aplikacji. Posiada ona 2 przyciski, pod którymi znajdują się 2 różne żądania. Powyżej przycisków znajduje się obrazek, który jest wypełniany w momencie otrzymania odpowiedzi z serwera. Poniżej znajdują się parametry odpowiedzi.
 
 \subsection{Import/Eksport danych z/do pliku CSV}
 
@@ -214,7 +214,7 @@ Aplikacja daje możliwość wyboru kontaktów za pomocą komponentu Contact Pick
 \caption{Bloki odpowiadające za eksport danych}
 \end{figure}
 
-Aplikacja działa bez zarzutu. Jedynym problemem była nazwa pliku, którą musi poprzedzać ukośnik. Wtedy dopiero App Inventor odczytuje plik z karty pamięci. Jeżeli nazwę pliku poprzedzają 2 ukośniki App Inventor szuka pliku w swoich assetach. Jeżeli nazwy pliku nie poprzedza żaden ukośnik, znajduje się on w prywanej bazie App Inventora.
+Aplikacja działa bez zarzutu. Jedynym problemem była nazwa pliku, którą musi poprzedzać ukośnik. Wtedy dopiero App Inventor odczytuje plik z karty pamięci. Jeżeli nazwę pliku poprzedzają 2 ukośniki App Inventor szuka pliku w swoich assetach. Jeżeli nazwy pliku nie poprzedza żaden ukośnik, znajduje się on w prywatnej bazie App Inventora.
 
 Eksport kontaktów był okazał się bezproblemowy. Eksportowana lista zawierająca inne listy odpowiada tabeli. Każdy wiersz tabeli jest wewnętrzną listą. Podczas importu dane mają taką samą strukturę.
 
@@ -243,7 +243,7 @@ Na powyższym ekranie widać w jaki sposób użytkownik musi rozwiązywać dzia�
 \caption{Statystyki zebrane przez aplikację Sonar}
 \end{figure}
 
-Można wywnioskować zatem z powyższego opisu oraz ze statystyk przedstawionych przez aplikację Sonar, że \emph{Think Faster} nie jest bardzo skomplikowaną grą. Około dwa tysiące lini kodu, z czego część jest testami, nie robi dużego wrażenia.
+Można wywnioskować zatem z powyższego opisu oraz ze statystyk przedstawionych przez aplikację Sonar, że \emph{Think Faster} nie jest bardzo skomplikowaną grą. Około dwa tysiące linii kodu, z czego część jest testami, nie robi dużego wrażenia.
 
 Próba skopiowania takiej aplikacji nie zakończyła się całkowitym sukcesem, ale nie można powiedzieć, że zakończyła się porażką.
 
@@ -253,7 +253,7 @@ android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
 \end{lstlisting}
 Aplikację następnie trzeba zbudować i podpisać cyfrowo, aby zainstalować ją na urządzeniu.
 
-Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełącznia ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów, a funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodatkowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
+Następnym problemem, jaki powstał, był problem optymalizacyjny. Aplikacja napisana w Javie podczas przełączania ekranów, ładowała do pamięci grafiki, wyświetlając przy tym napis \emph{Loading...}. Jest to niemożliwe do zrealizowania w App Inventorze. Jeżeli ekran posiada wiele elementów, a funkcja inicjalizująca ekran jest skomplikowana i czasochłonna, użytkownik może odnieść wrażenie, że urządzenie przestało odpowiadać. Podczas ładowania ekranów, dodatkowo użytkownikowi wyświetlały się reklamy, które są niemożliwe do stworzenia w App Inventorze.
 
 Ekran menu w oryginalnej aplikacji wygląda następująco:
 
@@ -271,7 +271,7 @@ Wybierając nową grę użytkownik przechodzi do wyboru ekranu z typem gry. Zapr
 \caption{Ekran wyboru rodzaju gry}
 \end{figure}
 
-Na tym ekranie użytkownik wybiera poziom trudniości oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. Poniżej nastąpi uzasadnienie tego stwierdzenia.
+Na tym ekranie użytkownik wybiera poziom trudności oraz przykłady, jakie chciałby rozwiązywać. O ile taki ekran programista jest w stanie stworzyć używając komponentów App Inventora, o tyle wiele trudności przyniosłoby wtedy stworzenie głównego ekranu gry. Poniżej nastąpi uzasadnienie tego stwierdzenia.
 
 Uruchamiając nową grę wiele rzeczy na początku musi zostać stworzone. Pierwszym z elementów jest pasek z uciekającym czasem. Został stworzony jako prostokątny obrazek przesuwający się w lewo. Jedynym problemem było, kiedy nastąpiła kolizja ze krawędzią ekranu. W App Inventorze nie ma możliwości wyłączenia jej. Obejście tego problemu to zmniejszanie rozmiaru obrazka z taką samą prędkością jaką poruszał się on na początku.
 
